@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.zhang.chat.base.BaseResponse;
 import com.zhang.chat.bean.Friend;
+import com.zhang.chat.bean.MainData;
 import com.zhang.chat.bean.ResList;
 import com.zhang.chat.bean.User;
 import com.zhang.chat.bean.chat.ListMessage;
@@ -74,6 +75,16 @@ public interface APIService {
      */
     @POST(UrlConstant.Friend_VerificationList)
     Observable<BaseResponse<ResList<Verification>>> getVerificationList();
+
+    /**
+     * 添加朋友验证消息
+     *
+     * @return
+     */
+    @POST(UrlConstant.USER_DATA)
+    Observable<BaseResponse<MainData>> getUserData(@Query("m_id") String m_id);
+
+
 
     /**
      * 搜索用户

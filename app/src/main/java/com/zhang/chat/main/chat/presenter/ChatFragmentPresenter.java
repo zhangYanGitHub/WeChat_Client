@@ -50,30 +50,9 @@ public class ChatFragmentPresenter extends ChatFragmentContract.Presenter {
 
     @Override
     public void getMessageList() {
-        mModel.getMessageList().subscribe(new ApiSubscribe<ListMessage>(context, TAG, 0, true) {
-            @Override
-            public void onSuccess(int whichRequest, ListMessage messageResList) {
-
-                if (ListUtil.isEmpty(messageResList.getList())) {
-                    return;
-                }
-                AppLog.e(messageResList.getList().get(0).toString());
-                mModel.add(messageResList);
-                List<MessageList> latestMessage = mModel.getLatestMessage();
-                messages.addAll(latestMessage);
-                mView.notifyList();
-            }
-
-            @Override
-            public void onError(int whichRequest, Throwable e) {
-                AppToast.showToast(e.getMessage());
-                List<MessageList> latestMessage = mModel.getLatestMessage();
-                if (ListUtil.isNotEmpty(latestMessage)) {
-                    messages.addAll(latestMessage);
-                }
-                mView.notifyList();
-            }
-        });
+        List<MessageList> latestMessage = mModel.getLatestMessage();
+        messages.addAll(latestMessage);
+        mView.notifyList();
     }
 
     @Override

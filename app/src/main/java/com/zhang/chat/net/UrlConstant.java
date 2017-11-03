@@ -56,6 +56,10 @@ public class UrlConstant {
      * 获取离线消息
      */
     public static final String MESSAGE_LIST = "message/getMessageList.action";
+    /**
+     * 获取离线消息
+     */
+    public static final String USER_DATA = "user/getUserData.action";
 
 
 }

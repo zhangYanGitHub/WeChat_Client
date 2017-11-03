@@ -39,6 +39,12 @@ public class Friend implements Comparable<Friend>, Serializable {
      */
     private int f_friend_groups_id;
 
+
+    /**
+     * 是否 验证通过
+     */
+    private boolean friend_state = true;
+
     public Friend(long user_id, String user_name, int user_sex, String user_desc, String user_phone,
                   String user_img_face_path, String f_friend_type_id, int f_friend_groups_id) {
         this.user_id = user_id;
@@ -62,18 +68,10 @@ public class Friend implements Comparable<Friend>, Serializable {
         this.f_friend_groups_id = 1;
     }
 
-    public long getF_id() {
-        return f_id;
-    }
-
-    public void setF_id(long f_id) {
-        this.f_id = f_id;
-    }
-
-    @Generated(hash = 186420980)
+    @Generated(hash = 583589384)
     public Friend(long f_id, long user_id, String user_name, int user_sex, String user_desc,
-                  String user_phone, String user_account, String user_img_face_path, String f_friend_type_id,
-                  int f_friend_groups_id) {
+            String user_phone, String user_account, String user_img_face_path, String f_friend_type_id,
+            int f_friend_groups_id, boolean friend_state) {
         this.f_id = f_id;
         this.user_id = user_id;
         this.user_name = user_name;
@@ -84,11 +82,23 @@ public class Friend implements Comparable<Friend>, Serializable {
         this.user_img_face_path = user_img_face_path;
         this.f_friend_type_id = f_friend_type_id;
         this.f_friend_groups_id = f_friend_groups_id;
+        this.friend_state = friend_state;
     }
 
     @Generated(hash = 287143722)
     public Friend() {
     }
+
+    public long getF_id() {
+        return f_id;
+    }
+
+    public void setF_id(long f_id) {
+        this.f_id = f_id;
+    }
+
+
+
 
     @Override
     public String toString() {
@@ -114,9 +124,7 @@ public class Friend implements Comparable<Friend>, Serializable {
 
     @Override
     public int compareTo(@NonNull Friend object) {
-        if (!(object instanceof Friend)) {
-            throw new ClassCastException();
-        }
+
         Friend that = (Friend) object;
         if (getHeadLetter() == '#') {
             if (that.getHeadLetter() == '#') {
@@ -132,6 +140,14 @@ public class Friend implements Comparable<Friend>, Serializable {
             return 0;
         }
         return 1;
+    }
+
+    public void setFriend_state(boolean friend_state) {
+        this.friend_state = friend_state;
+    }
+
+    public boolean isFriend_state() {
+        return friend_state;
     }
 
     public long getUser_id() {
@@ -204,5 +220,9 @@ public class Friend implements Comparable<Friend>, Serializable {
 
     public void setF_friend_groups_id(int f_friend_groups_id) {
         this.f_friend_groups_id = f_friend_groups_id;
+    }
+
+    public boolean getFriend_state() {
+        return this.friend_state;
     }
 }

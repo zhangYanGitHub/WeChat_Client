@@ -28,45 +28,8 @@ public class ContactPresenter extends ContactContract.Presenter {
     @Override
     public void getFriendList() {
 
+        refresh();
 
-        mModel.getFriendList().subscribe(new ApiSubscribe<ResList<Friend>>(context, TAG, 0, false) {
-            @Override
-            public void onSuccess(int whichRequest, ResList<Friend> friends) {
-                mModel.addFriendToSql(friends.getList());
-                mView.initData(friends.getList());
-            }
-
-            @Override
-            public void onError(int whichRequest, Throwable e) {
-                e.printStackTrace();
-                refresh();
-            }
-        });
-        mModel.getVerificationList().subscribe(new ApiSubscribe<ResList<Verification>>(context, TAG, 0, false) {
-            @Override
-            public void onSuccess(int whichRequest, ResList<Verification> verificationResList) {
-                for (Verification v : verificationResList.getList()) {
-                    mModel.addBySocket(v);
-                }
-                List<Verification> list = mModel.getList();
-                mView.setNotice(0, list == null ? 0 : list.size());
-                mView.setNotice(1, 0);
-            }
-
-            @Override
-            public void onError(int whichRequest, Throwable e) {
-                AppToast.showToast(e.getMessage());
-                List<Verification> list = mModel.getList();
-                mView.setNotice(0, list == null ? 0 : list.size());
-                mView.setNotice(1, 0);
-            }
-
-            @Override
-            public void onComplete() {
-                super.onComplete();
-                AppLog.e(TAG + "---------->onComplete()");
-            }
-        });
 
     }
 

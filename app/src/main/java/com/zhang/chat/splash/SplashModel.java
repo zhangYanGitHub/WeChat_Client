@@ -5,8 +5,14 @@ import com.greendao.gen.UserDao;
 import java.util.List;
 
 import com.zhang.chat.app.App;
+import com.zhang.chat.bean.MainData;
 import com.zhang.chat.bean.User;
+import com.zhang.chat.net.ApiFunction;
+import com.zhang.chat.net.RetrofitProvider;
+import com.zhang.chat.net.RxSchedulers;
 import com.zhang.chat.utils.ListUtil;
+
+import io.reactivex.Observable;
 
 /**
  * Created by 张俨 on 2017/9/8.
@@ -14,11 +20,12 @@ import com.zhang.chat.utils.ListUtil;
 
 public class SplashModel extends SplashContract.SplashModel {
 
-    private  UserDao userDao;
+    private UserDao userDao;
 
-    public SplashModel(){
+    public SplashModel() {
         userDao = getUserDao();
     }
+
     @Override
     public User getUserFromSQL() {
         List<User> list = userDao
@@ -30,7 +37,15 @@ public class SplashModel extends SplashContract.SplashModel {
         return user;
     }
 
+    @Override
+    public Observable<MainData> getUserData(long m_id) {
+        return RetrofitProvider.getService().getUserData(String.valueOf(m_id)).flatMap(new ApiFunction<MainData>()).compose(RxSchedulers.io_main());
+    }
 
+    @Override
+    public void save(MainData mainData) {
+
+    }
 
 
 }

@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
+
 import com.zhang.chat.R;
 import com.zhang.chat.base.BaseFragment;
 import com.zhang.chat.bean.Friend;
@@ -109,9 +110,9 @@ public class ContactFragment extends BaseFragment<ContactPresenter, ContactModel
 
     @Override
     public void initData(List<Friend> friends) {
-        if (ListUtil.isNotEmpty(friends)) {
-            this.friends.addAll(friends);
-        }
+        this.friends.clear();
+        this.friends.addAll(friends);
+
         Collections.sort(friends);
         adapter.notifyDataSetChanged();
         hintSideBar.setOnChooseLetterChangedListener(this);

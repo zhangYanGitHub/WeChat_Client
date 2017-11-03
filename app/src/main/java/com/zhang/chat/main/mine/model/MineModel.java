@@ -19,6 +19,7 @@ import com.zhang.chat.net.RxSchedulers;
 import com.zhang.chat.utils.Constant;
 import com.zhang.chat.utils.ListUtil;
 import com.zhang.chat.utils.ShareUtil;
+
 import io.reactivex.Observable;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -61,7 +62,7 @@ public class MineModel extends MineContract.Model {
         map.put("flag", "0");
         return RetrofitProvider
                 .getUpLoadService(50)
-                .upload(parts,map)
+                .upload(parts, map)
                 .flatMap(new ApiFunction<String>())
                 .compose(RxSchedulers.<String>io_main());
     }
@@ -122,7 +123,7 @@ public class MineModel extends MineContract.Model {
                 map.put("user_phone", user.getUser_phone());
                 break;
             case MinePresenter.UPDATE_SEX:
-                map.put("user_sex", user.getUser_sex()+"");
+                map.put("user_sex", user.getUser_sex() + "");
                 break;
             case MinePresenter.UPDATE_NAME:
                 map.put("user_name", user.getUser_name());
@@ -132,6 +133,7 @@ public class MineModel extends MineContract.Model {
                 break;
 
         }
+        map.put("type", String.valueOf(type));
         return RetrofitProvider
                 .getService()
                 .updateUser(map)

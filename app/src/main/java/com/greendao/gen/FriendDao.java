@@ -34,6 +34,7 @@ public class FriendDao extends AbstractDao<Friend, Long> {
         public final static Property User_img_face_path = new Property(7, String.class, "user_img_face_path", false, "USER_IMG_FACE_PATH");
         public final static Property F_friend_type_id = new Property(8, String.class, "f_friend_type_id", false, "F_FRIEND_TYPE_ID");
         public final static Property F_friend_groups_id = new Property(9, int.class, "f_friend_groups_id", false, "F_FRIEND_GROUPS_ID");
+        public final static Property Friend_state = new Property(10, boolean.class, "friend_state", false, "FRIEND_STATE");
     }
 
 
@@ -58,7 +59,8 @@ public class FriendDao extends AbstractDao<Friend, Long> {
                 "\"USER_ACCOUNT\" TEXT," + // 6: user_account
                 "\"USER_IMG_FACE_PATH\" TEXT," + // 7: user_img_face_path
                 "\"F_FRIEND_TYPE_ID\" TEXT," + // 8: f_friend_type_id
-                "\"F_FRIEND_GROUPS_ID\" INTEGER NOT NULL );"); // 9: f_friend_groups_id
+                "\"F_FRIEND_GROUPS_ID\" INTEGER NOT NULL ," + // 9: f_friend_groups_id
+                "\"FRIEND_STATE\" INTEGER NOT NULL );"); // 10: friend_state
     }
 
     /** Drops the underlying database table. */
@@ -104,6 +106,7 @@ public class FriendDao extends AbstractDao<Friend, Long> {
             stmt.bindString(9, f_friend_type_id);
         }
         stmt.bindLong(10, entity.getF_friend_groups_id());
+        stmt.bindLong(11, entity.getFriend_state() ? 1L: 0L);
     }
 
     @Override
@@ -143,6 +146,7 @@ public class FriendDao extends AbstractDao<Friend, Long> {
             stmt.bindString(9, f_friend_type_id);
         }
         stmt.bindLong(10, entity.getF_friend_groups_id());
+        stmt.bindLong(11, entity.getFriend_state() ? 1L: 0L);
     }
 
     @Override
@@ -162,7 +166,8 @@ public class FriendDao extends AbstractDao<Friend, Long> {
             cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // user_account
             cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // user_img_face_path
             cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8), // f_friend_type_id
-            cursor.getInt(offset + 9) // f_friend_groups_id
+            cursor.getInt(offset + 9), // f_friend_groups_id
+            cursor.getShort(offset + 10) != 0 // friend_state
         );
         return entity;
     }
@@ -179,6 +184,7 @@ public class FriendDao extends AbstractDao<Friend, Long> {
         entity.setUser_img_face_path(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
         entity.setF_friend_type_id(cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8));
         entity.setF_friend_groups_id(cursor.getInt(offset + 9));
+        entity.setFriend_state(cursor.getShort(offset + 10) != 0);
      }
     
     @Override
