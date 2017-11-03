@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x400"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/x20"
+    android:background="@color/Gray_CCCCCC"
+    android:orientation="vertical">
+    <!--发起群聊-->
+    <LinearLayout
+        android:id="@+id/ll_group_chat"
+        android:clickable="true"
+        android:layout_width="@dimen/x400"
+        android:paddingLeft="@dimen/x20"
+        android:layout_height="@dimen/y80"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_gravity="center_vertical"
+            android:scaleType="fitXY"
+            android:src="@drawable/pop_group_chat" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/x20"
+            android:text="发起群聊"
+            android:textColor="@color/Black_666666" />
+    </LinearLayout>
+
+    <!--添加朋友-->
+    <LinearLayout
+        android:id="@+id/ll_add_friend"
+        android:clickable="true"
+        android:paddingLeft="@dimen/x20"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y80"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_gravity="center_vertical"
+            android:scaleType="fitXY"
+            android:src="@drawable/pop_new_friend" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/x20"
+            android:src="@drawable/pop_group_chat"
+            android:text="添加朋友"
+            android:textColor="@color/Black_666666" />
+    </LinearLayout>
+    <!--扫一扫-->
+    <LinearLayout
+        android:id="@+id/ll_scan"
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:layout_height="@dimen/y80"
+        android:paddingLeft="@dimen/x20"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_gravity="center_vertical"
+            android:scaleType="fitXY"
+            android:src="@drawable/pop_scan" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/x20"
+            android:text="扫一扫"
+            android:textColor="@color/Black_666666" />
+    </LinearLayout>
+    <!--帮助与反馈-->
+    <LinearLayout
+        android:id="@+id/ll_help"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y80"
+        android:paddingLeft="@dimen/x20"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_gravity="center_vertical"
+            android:scaleType="fitXY"
+            android:src="@drawable/pop_help" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/x20"
+            android:text="帮助与反馈"
+            android:textColor="@color/Black_666666" />
+    </LinearLayout>
+</LinearLayout>

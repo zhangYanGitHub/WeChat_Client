@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\ebcbe2fdb6bbb85165e8ca13f8b6c12677dfa8f6\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-841dbfdeb47bebb188a3010e90dd43937800e076.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\bca9c4d2e5d634ba97144f47d0ebc4759abe49ce\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-867e48820c17f360ff497ef142c3a81b06731486.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\ad8b082a2123a051664c2a1ee3b082df2822c3ee\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-cd96350898a6507eed7f45288a853366abdd4836.jar" />
+    </item>
+    <item
+        jar="F:\git\WeChat_Client\corelib\build\intermediates\bundles\default\classes.jar"
+        revision="25.0.2"
+        sha1="b26e9c9cc3cfce0e16bd14533d8b824bd41e92a9">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-064ade77e7f56bc93293a7537405fb884d04dbed.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\6c9e8c3fabc7a24ea4415ecafe57edcd9daabaa5\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="d274320550b0352f154a1c8ba29930935800ffdd">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-d3ad382553c32ba0e0e07c3206e0242d674482dd.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava2\2.3.0\f436637f9500ab5b8bc32afe556373180894b4a5\adapter-rxjava2-2.3.0.jar"
+        revision="25.0.2"
+        sha1="f436637f9500ab5b8bc32afe556373180894b4a5">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\adapter-rxjava2-2.3.0-44f20bf39a10c4d40d1c07bbfcf28ac2b66d410f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-scalars\2.3.0\1eaa5762cb25c31b1905e2bfdfef70a2e0495ea6\converter-scalars-2.3.0.jar"
+        revision="25.0.2"
+        sha1="1eaa5762cb25c31b1905e2bfdfef70a2e0495ea6">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\converter-scalars-2.3.0-7fe26ec79dfb973de8ad23ddf6af6df20b131cc5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\1d9763901641f82387566e18a28e2350e3f7cc41\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="6a2bcb61342d09fe9acf55c9daf63961c8866cc0">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-4438c90b1bae284d2385a88607f10e324d2a6f0e.jar" />
+    </item>
+    <item
+        jar="D:\android\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\constraint-layout-solver-1.0.2-ea13353e5be3927b2bb5649db588ec0d2993fc2b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\3a2e84701a5d3741bf46bb9cbf5f994b9baff16e\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-34a2469ff3056aaf272d0339b3f23221098836b1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\873b3618d528dd245bd22f74f43f17e76b73a9ae\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-e070c4e4184e96b1319d7c7063210b2eed60d6bb.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\307e4c9f775998257125fe385fcaf9c24a30f380\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="4119ea97a7191ff9b8f33b534ea220448f62f491">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-4b42d730332582658d595e3d09d7932877df3f36.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.3.0\bcacde6a8ccedcc56c127403d26b76072fe6214d\retrofit-2.3.0.jar"
+        revision="25.0.2"
+        sha1="bcacde6a8ccedcc56c127403d26b76072fe6214d">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\retrofit-2.3.0-098b09b6a11593dc20fc4b42f55a6f8fd8090285.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.8.0\5a11f020cce2d11eb71ba916700600e18c4547e7\okhttp-3.8.0.jar"
+        revision="25.0.2"
+        sha1="5a11f020cce2d11eb71ba916700600e18c4547e7">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\okhttp-3.8.0-33bf805d1981bef7597a6907c10bb939ca43c5d6.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\e4254740183b8cde1840bbfcecb78a5ae96ed97f\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-4e234a9c08fefe14ad04365aaa9d6089307c9ef0.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\2552ef50c76e26c921f45254379f25cefc0c442f\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-a6525b5c83a4b1a639af5b8715f8922ab0939cf6.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.reactivestreams\reactive-streams\1.0.0\14b8c877d98005ba3941c9257cfe09f6ed0e0d74\reactive-streams-1.0.0.jar"
+        revision="25.0.2"
+        sha1="14b8c877d98005ba3941c9257cfe09f6ed0e0d74">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\reactive-streams-1.0.0-5ea215fafe26757b3eaa9e791da078c680959e41.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\7d0477ea41e2218ec8c741b76b2ab857a1998677\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="391288659480d2af2d45515369412dfd371206ec">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-2c2444c12e6ebcbe31ffbd5e54138d466f3ba20b.jar" />
+    </item>
+    <item
+        jar="D:\android\platforms\android-25\android.jar"
+        revision="25.0.2"
+        sha1="712a0312fe844a21a1b3812fa960c363a1578984">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackRuntimeLibraries\androidTest\debug\jars\8000\40\android-c4d0dcf742504d0411325c33bf85ce3db66bfdf2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.3.0\9e09011e9767bb76b5e27c9b8223476b93b14631\converter-gson-2.3.0.jar"
+        revision="25.0.2"
+        sha1="9e09011e9767bb76b5e27c9b8223476b93b14631">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\converter-gson-2.3.0-553680e635ae731332198bb4f76e9def80b56aa3.jar" />
+    </item>
+    <item
+        jar="F:\git\WeChat_Client\corelib\build\intermediates\bundles\default\libs\netty-all-4.1.16.Final-sources.jar"
+        revision="25.0.2"
+        sha1="b04f3ee8f5e43fa3b162981b50bb72fe1acabb33">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\netty-all-4.1.16.Final-sources-552c7d4fc9430abb85e73c540eb4b3913e5ab540.jar" />
+    </item>
+    <item
+        jar="F:\git\WeChat_Client\corelib\build\intermediates\bundles\default\libs\pinyin4j-2.5.0.jar"
+        revision="25.0.2"
+        sha1="fef719fbca78dba4ee7f0896fb38e446d19ee29a">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\pinyin4j-2.5.0-ad24c20e389e0611c4da5b715362fad0a46f6fc0.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.greenrobot\greendao\3.2.2\f8c7ebdc29310be23d076e5512bafe6bad3ce2f0\greendao-3.2.2.jar"
+        revision="25.0.2"
+        sha1="f8c7ebdc29310be23d076e5512bafe6bad3ce2f0">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\greendao-3.2.2-5718ce3c6c929a3e917f79acad8d41add1927c91.jar" />
+    </item>
+    <item
+        jar="D:\android\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\support-annotations-25.3.1-51d6471427c3d5cc82d54e4dfc26f7c3d35bd5f9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.reactivex.rxjava2\rxjava\2.0.1\57f850a6b317e5582f1dbaff10a9e7d7e1fcdcfb\rxjava-2.0.1.jar"
+        revision="25.0.2"
+        sha1="57f850a6b317e5582f1dbaff10a9e7d7e1fcdcfb">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\rxjava-2.0.1-88fc17d5d72694fd01b893bb935156af845d463f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\ee1d33d6cc03db3c812a5f9804dbaad19c23ad8c\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-0e00ab35517765bd5e9245bc898502fbcec669a2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.8.1\bc373fb6bc7bca3035041b924f158fd2b946ee8d\butterknife-annotations-8.8.1.jar"
+        revision="25.0.2"
+        sha1="bc373fb6bc7bca3035041b924f158fd2b946ee8d">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\butterknife-annotations-8.8.1-effad51e1b924a983cf91438469a33332a23c034.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\89a7f087a4a1b5222c3ecab9762b3deed41d2695\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-41f3d7dadf458e333fbe82631367d5ebcd36c2bb.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        revision="25.0.2"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\gson-2.7-2e85dbf641c4a16c73925139bd4ff50ebb0450dd.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        revision="25.0.2"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\okio-1.13.0-f63c7ab08dbed3c34e0fe0b9b1a691240ffa1bb7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\c808c4295a7e5716937bff6b0cf257d18627aa34\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-c82cf64463ed4fa026d7e6a230ebe6a50b11fdad.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\275fe451c1460b3eb53f864ecd248d15fd148dc8\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-0c3ee218f4490fd9dc4bc6953f51e86069fa6626.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\908b5677398b6abd96b154676969b0f0a38c9b3e\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-025728e25184af5cb8c4178d8ec2786e3645eb54.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\406e6897f9082426c538952ba6d1c0c468f8354a\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-90e114aa2c2e2d3b98e0e21110fa7c018ef13524.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\54587a7e4e2605cd58a9051a11db6b98b0dffb7f\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-25902eb0a53819fa04dd19b1a0fe03b7d3e78f5f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.greenrobot\greendao-api\3.2.2\e9bbf7a184b0b4914a10d8179c993cc9aa9b1b33\greendao-api-3.2.2.jar"
+        revision="25.0.2"
+        sha1="e9bbf7a184b0b4914a10d8179c993cc9aa9b1b33">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\greendao-api-3.2.2-d6937761e872ea9a5454e3cfef2297b1beab6c98.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        revision="25.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\glide-3.7.0-1f3ddf859a86296da03fddcf50d19f29d652df81.jar" />
+    </item>
+    <item
+        jar="D:\android\platforms\android-25\optional\org.apache.http.legacy.jar"
+        revision="25.0.2"
+        sha1="5f0541a4298daa0590b22cfbde43f85e2a675545">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackRuntimeLibraries\androidTest\debug\jars\8000\40\org.apache.http.legacy-41a635f88dbf6871603bc5db1475800aaf3d265c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\0a47c337309fde261ea4c1fbfa997dff34a99cce\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-2331a76d395efd8678bcc14cf3588e456763f526.jar" />
+    </item>
+    <item
+        jar="F:\git\WeChat_Client\corelib\build\intermediates\bundles\default\libs\netty-all-4.1.16.Final.jar"
+        revision="25.0.2"
+        sha1="e7a888719f58c5e9bf2cf00e469032cfc9906ff4">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\netty-all-4.1.16.Final-caa09f03b8dc519e68c2fdf4256ebcbe546dad15.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.android\build-cache\ae9c7511cfbf7d3bd6ab3a0475b01050971a807b\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="187b6b82610a6029bf4b02f5393d29139818488f">
+        <dex dex="F:\git\WeChat_Client\app\build\intermediates\transforms\preJackPackagedLibraries\androidTest\debug\jars\8000\1f\classes-958a29ac2bd0f06708ad9a8b55e0df379cef324e.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="__local_jars__:F.\git\WeChat_Client\corelib\libs\netty-all-4.1.16.Final.jar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/corelib/libs/netty-all-4.1.16.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/corelib/libs/netty-all-4.1.16.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

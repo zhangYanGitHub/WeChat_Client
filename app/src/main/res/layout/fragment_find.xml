@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_decoration_40"/>
+    <!--朋友圈-->
+    <RelativeLayout
+        android:id="@+id/rl_friend_circle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40">
+
+        <ImageView
+            android:id="@+id/iv_circile"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/y40"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/friend_circle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_toRightOf="@+id/iv_circile"
+            android:text="朋友圈"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+
+        <ImageView
+            android:id="@+id/iv_friend_circle_new"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <include layout="@layout/view_decoration_40"/>
+    <!--扫一扫-->
+    <RelativeLayout
+        android:id="@+id/rl_scan"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40">
+
+
+        <ImageView
+            android:id="@+id/iv_sao"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/scan" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_toRightOf="@+id/iv_sao"
+            android:text="扫一扫"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+        <ImageView
+            android:id="@+id/iv_scan_sao"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+
+    <!--摇一摇-->
+    <RelativeLayout
+        android:id="@+id/rl_shake"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90"
+        android:background="@drawable/selector_mine"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40">
+
+        <ImageView
+            android:id="@+id/iv_shake"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/shake" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_toRightOf="@+id/iv_shake"
+            android:text="摇一摇"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+        <ImageView
+            android:id="@+id/iv_shake_b"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x1"
+            android:background="@color/Gray_CCCCCC" />
+    </RelativeLayout>
+    <include layout="@layout/view_decoration_40"/>
+    <!--看一看-->
+    <RelativeLayout
+        android:id="@+id/rl_scan_see"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40">
+
+
+        <ImageView
+            android:id="@+id/iv_see"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/scan_see" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_toRightOf="@+id/iv_see"
+            android:text="看一看"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+        <ImageView
+            android:id="@+id/iv_see_b"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <include layout="@layout/view_decoration_40"/>
+    <!--漂流瓶-->
+    <RelativeLayout
+        android:id="@+id/rl_drift_bottle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90"
+        android:background="@drawable/selector_mine"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40">
+
+
+        <ImageView
+            android:id="@+id/iv_drift_bottle"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/drift_bottle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_toRightOf="@+id/iv_drift_bottle"
+            android:text="漂流瓶"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+        <ImageView
+            android:id="@+id/iv_drift_bottle_b"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+
+    <include layout="@layout/view_decoration_40"/>
+    <!--购物-->
+    <RelativeLayout
+        android:id="@+id/rl_shopping"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40">
+
+
+        <ImageView
+            android:id="@+id/iv_shop"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/shop" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_toRightOf="@+id/iv_shop"
+            android:text="购物"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+        <ImageView
+            android:id="@+id/iv_shop_b"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+
+    <!--游戏-->
+    <RelativeLayout
+        android:id="@+id/rl_game"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90"
+        android:background="@drawable/selector_mine"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40">
+
+
+        <ImageView
+            android:id="@+id/iv_game"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/game" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_toRightOf="@+id/iv_game"
+            android:text="游戏"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+        <ImageView
+            android:id="@+id/iv_game_b"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x1"
+            android:background="@color/Gray_CCCCCC"
+            android:paddingLeft="@dimen/x40"
+            android:paddingRight="@dimen/x40" />
+    </RelativeLayout>
+
+
+    <include layout="@layout/view_decoration_40"/>
+    <!--小程序-->
+    <RelativeLayout
+        android:id="@+id/rl_small_program"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40">
+
+
+        <ImageView
+            android:id="@+id/iv_small_program"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/small_program" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_toRightOf="@+id/iv_small_program"
+            android:text="小程序"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+        <ImageView
+            android:id="@+id/iv_small_program_b"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,38 @@
+
+{
+	"buildFiles" : [ "F:/git/WeChat_Client/corelib/CMakeLists.txt" ],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"D:\\android\\cmake\\3.6.3155560\\bin\\cmake.exe --build F:\\git\\WeChat_Client\\corelib\\.externalNativeBuild\\cmake\\debug\\mips64 --target clean"
+	],
+	"libraries" : 
+	{
+		"native-lib-Debug-mips64" : 
+		{
+			"abi" : "mips64",
+			"artifactName" : "native-lib",
+			"buildCommand" : "D:\\android\\cmake\\3.6.3155560\\bin\\cmake.exe --build F:\\git\\WeChat_Client\\corelib\\.externalNativeBuild\\cmake\\debug\\mips64 --target native-lib",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=mips64el-none-linux-android --gcc-toolchain=D:/android/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=D:/android/ndk-bundle/sysroot -Dnative_lib_EXPORTS  -isystem D:/android/ndk-bundle/sysroot/usr/include/mips64el-linux-android -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fintegrated-as -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "F:/git/WeChat_Client/corelib/src/main/jni/native-lib.c",
+					"workingDirectory" : "F:/git/WeChat_Client/corelib/.externalNativeBuild/cmake/debug/mips64"
+				}
+			],
+			"output" : "F:/git/WeChat_Client/corelib/build/intermediates/cmake/debug/obj/mips64/libnative-lib.so",
+			"toolchain" : "1664893565"
+		}
+	},
+	"toolchains" : 
+	{
+		"1664893565" : 
+		{
+			"cCompilerExecutable" : "D:/android/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "D:/android/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}

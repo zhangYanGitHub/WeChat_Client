@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Gray_F5F5F5"
+    android:orientation="vertical"
+    tools:context="com.zhang.chat.main.menu.activity.VerificationActivity">
+
+    <com.zhang.chat.view.CustomSubTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        title:background_title_bar="@color/White_FFFFFF"
+        title:right_1_visible="false"
+        title:right_2_visible="false"
+        title:right_save_visible="true"
+        title:text_save="发送"
+        title:text_save_color="@color/Green_00A653"
+        title:title_text="验证申请" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/x20"
+        android:paddingLeft="@dimen/x40"
+        android:paddingTop="@dimen/x20"
+        android:text="你需要发送申请验证申请，等待对方通过"
+        android:textColor="@color/Gray_999999"
+        android:textSize="@dimen/x24" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White_FFFFFF"
+        android:paddingBottom="@dimen/x10"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40"
+        android:paddingTop="@dimen/x10">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:maxLines="1"
+            android:paddingLeft="@dimen/x40"
+            android:text=""
+            android:textColor="@color/Black_333333"
+            android:textColorHint="@color/Black_666666"
+            android:textSize="@dimen/x28"
+            android:theme="@style/MyEditText" />
+
+        <ImageView
+            android:id="@+id/iv_image_clear"
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/y70"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:padding="@dimen/x15"
+            android:scaleType="fitXY"
+            android:src="@drawable/shanchu" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="@dimen/x1"
+        android:layout_height="@dimen/y30" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White_FFFFFF"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/x20"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40"
+        android:paddingTop="@dimen/x20">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/x20"
+            android:text="为朋友设置备注"
+            android:textColor="@color/Gray_999999"
+            android:textSize="@dimen/x24" />
+
+        <EditText
+            android:id="@+id/et_nick_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/Black_333333"
+            android:textColorHint="@color/Black_666666"
+            android:textSize="@dimen/x28"
+            android:theme="@style/MyEditText" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="@dimen/x1"
+        android:layout_height="@dimen/y30" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White_FFFFFF"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/x20"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40"
+        android:paddingTop="@dimen/x20">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/x20"
+            android:text="设置朋友圈权限"
+            android:textColor="@color/Gray_999999"
+            android:textSize="@dimen/x24" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="不让他(她) 看我的朋友圈"
+                android:textColor="@color/Black_666666"
+                android:textSize="@dimen/x28" />
+
+            <ImageView
+                android:id="@+id/iv_circle_turn"
+                android:layout_width="@dimen/x70"
+                android:layout_height="@dimen/x70"
+                android:layout_alignParentRight="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/on" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/Gray_F5F5F5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zhang.chat.main.menu.activity.NewFriendStateActivity">
+
+    <com.zhang.chat.view.CustomSubTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:background_title_bar="@color/White_FFFFFF"
+        app:right_1_visible="false"
+        app:right_2_visible="false"
+        app:right_save_visible="true"
+        app:text_save="添加朋友"
+        app:title_text="新朋友" />
+
+    <com.zhang.chat.view.SubSearch
+        android:id="@+id/title_sub_bar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x40"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20"
+        app:iv_voice_1_visible="false"
+        app:search_image="@drawable/search_sub" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/x20"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20"
+        android:paddingTop="@dimen/x30"
+        android:text="新的朋友"
+        android:textColor="@color/Gray_999999"
+        android:textSize="@dimen/x20" />
+
+    <com.zhang.chat.corelib.recycleview.IRecyclerView
+        android:id="@+id/recycle_view"
+        android:layout_width="match_parent"
+        app:refreshEnabled="false"
+        app:loadMoreFooterLayout="@layout/item_footer"
+        app:loadMoreEnabled="false"
+        android:layout_height="match_parent" />
+</LinearLayout>

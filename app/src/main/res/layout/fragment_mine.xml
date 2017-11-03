@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_decoration_40" />
+    <!--账户信息-->
+    <LinearLayout
+        android:id="@+id/ll_person_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
+        android:padding="@dimen/x30">
+
+        <ImageView
+            android:id="@+id/iv_img_face"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y100"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/x20">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/Black_333333"
+                android:textSize="@dimen/x28"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_below="@+id/tv_name"
+                android:layout_width="1px"
+                android:layout_height="@dimen/y20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="账号:"
+                    android:textColor="@color/Gray_B3B3B3"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:id="@+id/tv_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:text="zhang"
+                    android:textColor="@color/Gray_B3B3B3"
+                    android:textSize="@dimen/x28" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include layout="@layout/view_decoration_40" />
+    <!--钱包-->
+    <RelativeLayout
+        android:id="@+id/rl_money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:paddingLeft="@dimen/x30"
+        android:paddingRight="@dimen/x30">
+
+
+        <ImageView
+            android:id="@+id/in_money"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/money" />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/x30"
+            android:layout_toRightOf="@+id/in_money"
+            android:text="钱包"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+        <ImageView
+            android:id="@+id/in_money_b"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <!--收藏-->
+    <include layout="@layout/view_decoration_40" />
+
+    <RelativeLayout
+        android:id="@+id/rl_collect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x30"
+        android:paddingRight="@dimen/x30">
+
+
+        <ImageView
+            android:id="@+id/iv_collect"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/collect" />
+
+        <TextView
+            android:id="@+id/tv_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/x30"
+            android:layout_toRightOf="@+id/iv_collect"
+            android:text="收藏"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+        <ImageView
+            android:id="@+id/iv_collect_b"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <!--相册-->
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        android:background="@color/Gray_CCCCCC" />
+
+    <RelativeLayout
+        android:id="@+id/rl_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@drawable/selector_mine"
+        android:paddingLeft="@dimen/x30"
+        android:paddingRight="@dimen/x30">
+
+
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y35"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/photo_album" />
+
+        <TextView
+            android:id="@+id/tv_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/x30"
+            android:layout_toRightOf="@+id/iv_photo"
+            android:text="相册"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+        <ImageView
+            android:id="@+id/iv_photo_b"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        android:background="@color/Gray_CCCCCC" />
+    <!--卡包-->
+
+
+    <RelativeLayout
+        android:id="@+id/rl_cart_bag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:paddingLeft="@dimen/x30"
+        android:paddingRight="@dimen/x30">
+
+
+        <ImageView
+            android:id="@+id/iv_cart_bag"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/card_bag" />
+
+        <TextView
+            android:id="@+id/tv_cart_bag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/x30"
+            android:layout_toRightOf="@+id/iv_cart_bag"
+            android:text="卡包"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+        <ImageView
+            android:id="@+id/iv_cart_bag_b"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        android:background="@color/Gray_CCCCCC" />
+
+    <!--表情-->
+
+
+    <RelativeLayout
+        android:id="@+id/rl_expression"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:paddingLeft="@dimen/x30"
+        android:paddingRight="@dimen/x30">
+
+
+        <ImageView
+            android:id="@+id/iv_expression"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/expression" />
+
+        <TextView
+            android:id="@+id/tv_expression"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/x30"
+            android:layout_toRightOf="@+id/iv_expression"
+            android:text="表情"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+        <ImageView
+            android:id="@+id/iv_expression_b"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+
+    <include layout="@layout/view_decoration_40" />
+    <!--设置-->
+    <RelativeLayout
+        android:id="@+id/rl_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:paddingLeft="@dimen/x30"
+        android:paddingRight="@dimen/x30">
+
+
+        <ImageView
+            android:id="@+id/iv_setting"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/setting_icon" />
+
+        <TextView
+            android:id="@+id/tv_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/x30"
+            android:layout_toRightOf="@+id/iv_setting"
+            android:text="设置"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+
+        <ImageView
+            android:id="@+id/iv_setting_b"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+</LinearLayout>

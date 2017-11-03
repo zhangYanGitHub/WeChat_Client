@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zhang.chat.main.menu.activity.AddFriendActivity">
+
+
+    <com.zhang.chat.view.CustomSubTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        title:background_title_bar="@color/White_FFFFFF"
+        title:right_1_visible="false"
+        title:right_2_visible="false"
+        title:title_text="添加朋友" />
+
+    <com.zhang.chat.view.SubSearch
+        android:id="@+id/title_sub_bar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x40"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20"
+        title:iv_voice_1_visible="false"
+        title:search_image="@drawable/search_sub" />
+
+
+</LinearLayout>

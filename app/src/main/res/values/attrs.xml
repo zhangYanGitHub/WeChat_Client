@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IRecyclerView">
+        <attr name="refreshHeaderLayout" format="reference" />
+        <attr name="loadMoreFooterLayout" format="reference" />
+        <attr name="refreshEnabled" format="boolean" />
+        <attr name="loadMoreEnabled" format="boolean" />
+        <attr name="refreshFinalMoveOffset" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="CustomTitleBar">
+        <attr name="background_title_bar" format="color"/>
+        <attr name="right_1_visible" format="boolean" />
+        <attr name="right_2_visible" format="boolean" />
+        <attr name="right_save_visible" format="boolean" />
+        <attr name="right_more_visible" format="boolean" />
+        <attr name="title_text" format="string" />
+        <attr name="text_save" format="string"/>
+        <attr name="text_save_color" format="color"/>
+        <attr name="right_image_1" format="reference|integer" />
+        <attr name="right_image_2" format="reference|integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomSearchBar">
+        <attr name="background_search_title_bar" format="color"/>
+        <attr name="iv_voice_1_visible" format="boolean" />
+        <attr name="search_image" format="reference|integer" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zhang.chat.main.mine.activity.SystemSettingActivity">
+
+    <com.zhang.chat.view.CustomSubTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        title:background_title_bar="@color/White_FFFFFF"
+        title:right_1_visible="false"
+        title:right_2_visible="false"
+        title:title_text="设置" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/view_decoration_40"/>
+            <!--新消息提醒-->
+            <RelativeLayout
+                android:id="@+id/rl_message_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_mine"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20">
+
+                <TextView
+                    android:id="@+id/tv_message_hint"
+                    android:layout_width="wrap_content"
+                    android:padding="@dimen/x20"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:text="新消息提醒"
+                    android:textColor="@color/Black_666666"
+                    android:textSize="@dimen/x28" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x1"
+                    android:background="@color/Gray_CCCCCC"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+
+            <!--勿扰模式-->
+            <RelativeLayout
+                android:id="@+id/rl_dnd_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_mine"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20">
+
+                <TextView
+                    android:id="@+id/tv_dnd_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/x20"
+                    android:layout_centerVertical="true"
+                    android:text="勿扰模式"
+                    android:textColor="@color/Black_666666"
+                    android:textSize="@dimen/x28" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x1"
+                    android:background="@color/Gray_CCCCCC"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+
+            <!--聊天-->
+            <RelativeLayout
+                android:id="@+id/rl_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_mine"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20">
+
+                <TextView
+                    android:id="@+id/tv_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/x20"
+                    android:layout_centerVertical="true"
+                    android:text="聊天"
+                    android:textColor="@color/Black_666666"
+                    android:textSize="@dimen/x28" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x1"
+                    android:background="@color/Gray_CCCCCC"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+
+
+            <!--隐私-->
+            <RelativeLayout
+                android:id="@+id/rl_privacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_mine"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20">
+
+                <TextView
+                    android:id="@+id/tv_privacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/x20"
+                    android:layout_centerVertical="true"
+                    android:text="隐私"
+                    android:textColor="@color/Black_666666"
+                    android:textSize="@dimen/x28" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x1"
+                    android:background="@color/Gray_CCCCCC"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+
+
+            <!--通用-->
+            <RelativeLayout
+                android:id="@+id/rl_common"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_mine"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20">
+
+                <TextView
+                    android:id="@+id/tv_common"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/x20"
+                    android:layout_centerVertical="true"
+                    android:text="通用"
+                    android:textColor="@color/Black_666666"
+                    android:textSize="@dimen/x28" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x1"
+                    android:background="@color/Gray_CCCCCC"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+
+
+            <!--帐号与安全-->
+            <RelativeLayout
+                android:id="@+id/rl_security"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_mine"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20">
+
+                <TextView
+                    android:id="@+id/tv_security"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/x20"
+                    android:layout_centerVertical="true"
+                    android:text="帐号与安全"
+                    android:textColor="@color/Black_666666"
+                    android:textSize="@dimen/x28" />
+
+            </RelativeLayout>
+
+
+            <include layout="@layout/view_decoration_40"/>
+            <!--关于WeChat-->
+            <RelativeLayout
+                android:id="@+id/rl_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_mine"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20">
+
+                <TextView
+                    android:id="@+id/tv_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/x20"
+                    android:layout_centerVertical="true"
+                    android:text="关于我们"
+                    android:textColor="@color/Black_666666"
+                    android:textSize="@dimen/x28" />
+                
+            </RelativeLayout>
+
+            <!--帮助与反馈-->
+            <RelativeLayout
+                android:id="@+id/rl_help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_mine"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20">
+
+                <TextView
+                    android:id="@+id/tv_help"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/x20"
+                    android:layout_centerVertical="true"
+                    android:text="帮助与反馈"
+                    android:textColor="@color/Black_666666"
+                    android:textSize="@dimen/x28" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x1"
+                    android:background="@color/Gray_CCCCCC"/>
+            </RelativeLayout>
+
+
+            <include layout="@layout/view_decoration_40"/>
+            <!--插件-->
+            <RelativeLayout
+                android:id="@+id/rl_plug_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_mine"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20">
+
+                <TextView
+                    android:id="@+id/tv_plug_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/x20"
+                    android:layout_centerVertical="true"
+                    android:text="插件"
+                    android:textColor="@color/Black_666666"
+                    android:textSize="@dimen/x28" />
+            </RelativeLayout>
+
+            <include layout="@layout/view_decoration_40"/>
+            <!--退出-->
+            <RelativeLayout
+                android:id="@+id/rl_exit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_mine"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20">
+
+                <TextView
+                    android:id="@+id/tv_exit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/x20"
+                    android:layout_centerVertical="true"
+                    android:text="退出"
+                    android:textColor="@color/Black_666666"
+                    android:textSize="@dimen/x28" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zhang.chat.main.mine.activity.PersonChangeActivity">
+
+    <com.zhang.chat.view.CustomSubTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        title:background_title_bar="@color/White_FFFFFF"
+        title:right_1_visible="false"
+        title:right_save_visible="true"
+        title:right_2_visible="false"
+        title:title_text="更改名字" />
+    <include layout="@layout/view_decoration_40" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/White_FFFFFF"
+        android:layout_width="match_parent"
+        android:padding="@dimen/x20"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inputType="text"
+            android:maxLines="1"
+            android:text=""
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textColor="@color/Black_000000"
+            android:textSize="@dimen/x30"
+            android:theme="@style/MyEditText" />
+        <View
+            android:layout_width="1px"
+            android:layout_height="@dimen/x10"/>
+        <TextView
+            android:id="@+id/tv_name_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/x30"
+            android:text="好名字可以让你的朋友记住你"
+            android:textColor="@color/Gray_C9C9C9"
+            android:textSize="@dimen/x28" />
+    </LinearLayout>
+</LinearLayout>

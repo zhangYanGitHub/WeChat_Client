@@ -1,0 +1,3 @@
+F:/git/WeChat_Client/corelib/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/native-lib.dir
+F:/git/WeChat_Client/corelib/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/edit_cache.dir
+F:/git/WeChat_Client/corelib/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir

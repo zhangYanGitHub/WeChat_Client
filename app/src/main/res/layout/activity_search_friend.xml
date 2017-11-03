@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zhang.chat.main.menu.activity.SearchFriendActivity">
+
+    <com.zhang.chat.view.CustomSubSearchBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:iv_voice_1_visible="true" />
+
+    <com.zhang.chat.corelib.recycleview.IRecyclerView
+        android:id="@+id/recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <include layout="@layout/item_footer" />
+
+    <TextView
+        android:id="@+id/tv_default"
+        style="@style/Text24Gray_999999"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="搜索结果为空"
+        android:visibility="gone" />
+</LinearLayout>

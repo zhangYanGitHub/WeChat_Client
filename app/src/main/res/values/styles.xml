@@ -1,0 +1,58 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/White_FFFFFF</item>
+        <item name="android:windowBackground">@color/Gray_F5F5F5</item>
+    </style>
+
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/Green_2BB2A4</item>
+        <item name="colorControlNormal">@color/Green_00A653</item>
+    </style>
+
+    <style name="MyEditText_Gray" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/Gray_CCCCCC</item>
+        <item name="colorControlNormal">@color/Gray_CCCCCC</item>
+    </style>
+
+    <style name="AppTheme.stateBarBlack" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/Black_000000</item>
+        <item name="android:windowBackground">@color/Gray_F5F5F5</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/White_FFFFFF</item>
+        <item name="android:textColorPrimary">@color/iron</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:background">@color/Black_000000_70</item>
+    </style>
+
+    <style name="AnimDown" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/push_scale_out</item>
+    </style>
+
+    <style name="Text24Gray_999999">
+        <item name="android:textSize">@dimen/x24</item>
+        <item name="android:textColor">@color/Gray_999999</item>
+    </style>
+
+</resources>

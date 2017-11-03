@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!--新朋友-->
+    <RelativeLayout
+        android:id="@+id/ll_new_friend"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:paddingTop="@dimen/y10"
+        android:paddingBottom="@dimen/y10"
+        android:paddingRight="@dimen/x20"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x20">
+        <ImageView
+            android:id="@+id/iv_1"
+            android:layout_width="@dimen/x110"
+            android:scaleType="fitXY"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/x10"
+            android:paddingLeft="@dimen/x10"
+            android:paddingBottom="@dimen/x10"
+            android:layout_height="@dimen/x100"
+            android:src="@drawable/new_friend" />
+        <LinearLayout
+            android:id="@+id/ll_dot_new_friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:paddingLeft="@dimen/x70">
+
+            <TextView
+                android:id="@+id/tv_dot_new_friend"
+                android:layout_width="@dimen/x35"
+                android:layout_height="@dimen/x35"
+                android:background="@drawable/circle_notice_shape"
+                android:gravity="center"
+                android:text="99"
+                android:textColor="@color/White_FFFFFF"
+                android:textSize="@dimen/x18" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_toRightOf="@+id/iv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="新的朋友"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x30" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:background="@color/Gray_CCCCCC"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20" />
+
+    <!--群聊-->
+    <RelativeLayout
+        android:id="@+id/ll_group_chat"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x20">
+
+        <ImageView
+            android:id="@+id/iv_2"
+            android:layout_width="@dimen/x110"
+            android:scaleType="fitXY"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/x10"
+            android:paddingLeft="@dimen/x10"
+            android:paddingBottom="@dimen/x10"
+            android:layout_height="@dimen/x100"
+            android:src="@drawable/group_chat" />
+        <LinearLayout
+            android:id="@+id/ll_dot_group_chat"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/x70">
+
+            <TextView
+                android:id="@+id/tv_dot_group_chat"
+                android:layout_width="@dimen/x35"
+                android:layout_height="@dimen/x35"
+                android:background="@drawable/circle_notice_shape"
+                android:gravity="center"
+                android:text="99"
+                android:textColor="@color/White_FFFFFF"
+                android:textSize="@dimen/x18" />
+        </LinearLayout>
+        <TextView
+            android:layout_toRightOf="@+id/iv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="群聊"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x30" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:background="@color/Gray_CCCCCC"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20" />
+
+    <!--标签-->
+    <LinearLayout
+        android:id="@+id/ll_sign"
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x20">
+
+        <ImageView
+            android:layout_width="@dimen/x110"
+            android:scaleType="fitXY"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/x10"
+            android:paddingLeft="@dimen/x10"
+            android:paddingBottom="@dimen/x10"
+            android:layout_height="@dimen/x100"
+            android:src="@drawable/sign" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="标签"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x30" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:background="@color/Gray_CCCCCC"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20" />
+    <!--公众号-->
+    <LinearLayout
+        android:id="@+id/ll_public_sign"
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x20">
+
+        <ImageView
+            android:layout_width="@dimen/x110"
+            android:scaleType="fitXY"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/x10"
+            android:paddingLeft="@dimen/x10"
+            android:paddingBottom="@dimen/x10"
+            android:layout_height="@dimen/x100"
+            android:src="@drawable/public_sign" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="公众号"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x30" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+
+{
+	"buildFiles" : [ "F:/git/WeChat_Client/corelib/CMakeLists.txt" ],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"D:\\android\\cmake\\3.6.3155560\\bin\\cmake.exe --build F:\\git\\WeChat_Client\\corelib\\.externalNativeBuild\\cmake\\debug\\x86 --target clean"
+	],
+	"libraries" : 
+	{
+		"native-lib-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "native-lib",
+			"buildCommand" : "D:\\android\\cmake\\3.6.3155560\\bin\\cmake.exe --build F:\\git\\WeChat_Client\\corelib\\.externalNativeBuild\\cmake\\debug\\x86 --target native-lib",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=D:/android/ndk-bundle/toolchains/x86-4.9/prebuilt/windows-x86_64 --sysroot=D:/android/ndk-bundle/sysroot -Dnative_lib_EXPORTS  -isystem D:/android/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=16 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "F:/git/WeChat_Client/corelib/src/main/jni/native-lib.c",
+					"workingDirectory" : "F:/git/WeChat_Client/corelib/.externalNativeBuild/cmake/debug/x86"
+				}
+			],
+			"output" : "F:/git/WeChat_Client/corelib/build/intermediates/cmake/debug/obj/x86/libnative-lib.so",
+			"toolchain" : "1664893565"
+		}
+	},
+	"toolchains" : 
+	{
+		"1664893565" : 
+		{
+			"cCompilerExecutable" : "D:/android/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "D:/android/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}

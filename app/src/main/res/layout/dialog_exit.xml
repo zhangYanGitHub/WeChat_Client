@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x500"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/x40"
+    android:background="@color/White_FFFFFF"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_exit_present_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/x30">
+
+        <ImageView
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:src="@drawable/exit_account" />
+
+        <TextView
+            android:id="@+id/tv_plug_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x40"
+            android:text="退出当前账号"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_exit_we_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/x30">
+
+        <ImageView
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:src="@drawable/exit_we_chat" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x40"
+            android:text="关闭微信"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x28" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x600"
+    android:layout_height="wrap_content"
+    android:background="@color/White_FFFFFF"
+    android:orientation="vertical"
+    android:padding="@dimen/x20">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="性别"
+        android:padding="@dimen/x20"
+        android:textColor="@color/Black_000000"
+        android:textSize="@dimen/x30"
+        android:textStyle="bold" />
+
+
+    <RadioGroup
+        android:id="@+id/rg_sex"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_man"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/y30"
+            android:paddingLeft="@dimen/x20"
+            android:text="男"
+            android:textSize="@dimen/x30" />
+
+        <RadioButton
+            android:id="@+id/radio_woman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/y30"
+            android:paddingLeft="@dimen/x20"
+            android:text="女"
+            android:textSize="@dimen/x30" />
+    </RadioGroup>
+</LinearLayout>

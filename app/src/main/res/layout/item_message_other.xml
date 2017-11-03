@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/x20">
+
+    <LinearLayout
+        android:id="@+id/ll_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="@dimen/x20">
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/Gray_CCCCCC"
+            android:padding="@dimen/x10"
+            android:text="2017-9-3 14:20"
+            android:textColor="@color/White_FFFFFF"
+            android:textSize="@dimen/x23" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_time">
+
+        <ImageView
+            android:id="@+id/iv_mine_face"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentLeft="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_face" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_mine_face"
+            android:paddingRight="@dimen/x200"
+            android:paddingLeft="@dimen/x20">
+
+            <TextView
+                android:id="@+id/tv_message_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/selector_message_other"
+                android:padding="@dimen/x20"
+                android:text="你好啊"
+                android:textSize="@dimen/x40" />
+
+            <ImageView
+                android:id="@+id/iv_mine_image"
+                android:layout_width="@dimen/x300"
+                android:layout_height="@dimen/y300"
+                android:layout_alignParentLeft="true"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

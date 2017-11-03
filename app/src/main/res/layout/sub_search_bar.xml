@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/x20"
+        android:paddingRight="@dimen/x20"
+        android:background="@color/White_FFFFFF"
+        android:layout_height="@dimen/x100">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:theme="@style/MyEditText"
+            android:maxLines="1"
+            android:text=""
+            android:paddingLeft="@dimen/x40"
+            android:hint=""
+            android:focusable="false"
+            android:textColorHint="@color/Black_666666"
+            android:textSize="@dimen/x28"
+            android:textColor="@color/Black_333333"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/iv_image_clear"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x10"
+            android:layout_width="@dimen/x30"
+            android:clickable="true"
+            android:layout_height="@dimen/y30"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/selector_mine"
+            android:scaleType="fitXY"
+            android:src="@drawable/search_clear" />
+
+        <ImageView
+            android:id="@+id/iv_image_search"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="@dimen/x10"
+            android:layout_width="@dimen/x40"
+            android:clickable="true"
+            android:layout_height="@dimen/y40"
+            android:layout_gravity="center_vertical"
+            android:scaleType="fitXY"
+            android:src="@drawable/search_sub" />
+    </RelativeLayout>
+</LinearLayout>
