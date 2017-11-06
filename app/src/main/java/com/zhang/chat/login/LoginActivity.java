@@ -125,7 +125,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter, LoginModel> impl
 
 
     @Override
-    public void update(User data) {
+    public void update() {
         showErrorMessage("登录成功");
         etPassword.postDelayed(new Runnable() {
             @Override

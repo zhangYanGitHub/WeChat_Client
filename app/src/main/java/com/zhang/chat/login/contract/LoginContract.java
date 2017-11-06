@@ -3,6 +3,7 @@ package com.zhang.chat.login.contract;
 import com.zhang.chat.base.BaseModel;
 import com.zhang.chat.base.BasePresenter;
 import com.zhang.chat.base.BaseView;
+import com.zhang.chat.bean.MainData;
 import com.zhang.chat.bean.User;
 import io.reactivex.Observable;
 
@@ -19,7 +20,7 @@ public interface LoginContract {
 
         String getPassword();
 
-        void update(User data);
+        void update();
 
         /**
          * 登录结果提示
@@ -41,6 +42,8 @@ public interface LoginContract {
 
         public abstract void insert(User user);
 
-        public abstract Observable<User> login(String name, String password);
+        public abstract void save(MainData mainData);
+
+        public abstract Observable<MainData> login(String name, String password);
     }
 }

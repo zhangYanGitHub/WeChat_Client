@@ -3,3 +3,5 @@
 64	148	0	../../../../build/intermediates/cmake/release/obj/arm64-v8a/libnative-lib.so	4cca9bff1f2f19a4
 0	63	0	CMakeFiles/native-lib.dir/src/main/jni/native-lib.c.o	531308afd4f9ae39
 63	118	0	../../../../build/intermediates/cmake/release/obj/arm64-v8a/libnative-lib.so	4cca9bff1f2f19a4
+1	74	0	CMakeFiles/native-lib.dir/src/main/jni/native-lib.c.o	531308afd4f9ae39
+75	131	0	../../../../build/intermediates/cmake/release/obj/arm64-v8a/libnative-lib.so	4cca9bff1f2f19a4

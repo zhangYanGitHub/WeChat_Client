@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Chat</string>
+    <string name="app_name">微信</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">user account</string>

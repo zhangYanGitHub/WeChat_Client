@@ -11,7 +11,17 @@ public class MainData {
     private List<Message> messageList;
     private List<Verification> verifications;
 
+    private List<MessageList> latestMessage;
+
     private User user;
+
+    public List<MessageList> getLatestMessage() {
+        return latestMessage;
+    }
+
+    public void setLatestMessage(List<MessageList> latestMessage) {
+        this.latestMessage = latestMessage;
+    }
 
     public void setUser(User user) {
         this.user = user;
@@ -43,5 +53,26 @@ public class MainData {
 
     public void setVerifications(List<Verification> verifications) {
         this.verifications = verifications;
+    }
+
+    public static class MessageList {
+        private Message message;
+        private int number;
+
+        public Message getMessage() {
+            return message;
+        }
+
+        public void setMessage(Message message) {
+            this.message = message;
+        }
+
+        public int getNumber() {
+            return number;
+        }
+
+        public void setNumber(int number) {
+            this.number = number;
+        }
     }
 }

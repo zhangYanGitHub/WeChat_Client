@@ -1,13 +1,23 @@
 package com.zhang.chat.login.model;
 
+import com.greendao.gen.FriendDao;
+import com.greendao.gen.MessageListDao;
 import com.greendao.gen.UserDao;
 
+import com.greendao.gen.VerificationDao;
 import com.zhang.chat.app.App;
+import com.zhang.chat.bean.Friend;
+import com.zhang.chat.bean.MainData;
 import com.zhang.chat.bean.User;
+import com.zhang.chat.bean.chat.MessageList;
+import com.zhang.chat.bean.chat.Verification;
 import com.zhang.chat.login.contract.LoginContract;
 import com.zhang.chat.net.ApiFunction;
 import com.zhang.chat.net.RetrofitProvider;
 import com.zhang.chat.net.RxSchedulers;
+
+import java.util.List;
+
 import io.reactivex.Observable;
 
 /**
@@ -19,18 +29,27 @@ public class LoginModel extends LoginContract.Model {
 
     private final UserDao userDao;
 
+    private MessageListDao messageListDao;
+    private VerificationDao verificationDao;
+    private FriendDao friendDao;
+
     public LoginModel() {
         userDao = getUserDao();
+        if (getSession() != null) {
+            messageListDao = getSession().getMessageListDao();
+            friendDao = getSession().getFriendDao();
+            verificationDao = getSession().getVerificationDao();
+        }
     }
 
     @Override
-    public Observable<User> login(String name, String password) {
+    public Observable<MainData> login(String name, String password) {
 
         return RetrofitProvider
                 .getService()
                 .login(name, password)
-                .flatMap(new ApiFunction<User>())
-                .compose(RxSchedulers.<User>io_main());
+                .flatMap(new ApiFunction<MainData>())
+                .compose(RxSchedulers.<MainData>io_main());
     }
 
     @Override
@@ -44,5 +63,31 @@ public class LoginModel extends LoginContract.Model {
         userDao.insertOrReplace(user);
     }
 
+    @Override
+    public void save(MainData mainData) {
 
+        messageListDao = getSession().getMessageListDao();
+        friendDao = getSession().getFriendDao();
+        verificationDao = getSession().getVerificationDao();
+
+        List<Friend> friends = mainData.getFriends();
+        List<MainData.MessageList> latestMessage = mainData.getLatestMessage();
+        User user = mainData.getUser();
+        List<Verification> verifications = mainData.getVerifications();
+
+        for (Friend friend : friends) {
+            friendDao.save(friend);
+        }
+        userDao.save(user);
+
+        for (Verification verification : verifications) {
+            verificationDao.save(verification);
+        }
+
+        for (MainData.MessageList messageList : latestMessage) {
+            messageListDao.deleteAll();
+            MessageList messageList1 = new MessageList(messageList.getMessage(), messageList.getNumber());
+            messageListDao.save(messageList1);
+        }
+    }
 }

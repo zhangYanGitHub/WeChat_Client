@@ -2,11 +2,6 @@ package com.zhang.chat.main.contact;
 
 import com.greendao.gen.FriendDao;
 import com.greendao.gen.VerificationDao;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import com.zhang.chat.app.App;
 import com.zhang.chat.bean.Friend;
 import com.zhang.chat.bean.ResList;
 import com.zhang.chat.bean.chat.Verification;
@@ -14,9 +9,10 @@ import com.zhang.chat.corelib.utils.AppLog;
 import com.zhang.chat.net.ApiFunction;
 import com.zhang.chat.net.RetrofitProvider;
 import com.zhang.chat.net.RxSchedulers;
-import com.zhang.chat.utils.Constant;
 import com.zhang.chat.utils.ListUtil;
-import com.zhang.chat.utils.ShareUtil;
+
+import java.util.List;
+
 import io.reactivex.Observable;
 
 /**
@@ -34,7 +30,7 @@ public class ContactModel extends ContactContract.Model {
 
     @Override
     public List<Friend> getFriendListFromSql() {
-        List<Friend> list = friendDao.queryBuilder().build().list();
+        List<Friend> list = friendDao.queryBuilder().where(FriendDao.Properties.Friend_state.eq(true)).list();
 
         return list;
     }

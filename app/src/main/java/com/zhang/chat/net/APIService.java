@@ -32,7 +32,7 @@ public interface APIService {
      * @return
      */
     @POST(UrlConstant.LOGIN)
-    Observable<BaseResponse<User>> login(@Query("user_id") String user, @Query("user_password") String password);
+    Observable<BaseResponse<MainData>> login(@Query("uu_id") String user, @Query("user_password") String password);
 
     /**
      * 更新用户信息

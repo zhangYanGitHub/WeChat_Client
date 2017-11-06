@@ -3,3 +3,5 @@
 74	299	0	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	5bb57b98a67d605b
 1	65	0	CMakeFiles/native-lib.dir/src/main/jni/native-lib.c.o	c2f5648d427e0900
 65	288	0	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	5bb57b98a67d605b
+1	71	0	CMakeFiles/native-lib.dir/src/main/jni/native-lib.c.o	c2f5648d427e0900
+71	142	0	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	5bb57b98a67d605b

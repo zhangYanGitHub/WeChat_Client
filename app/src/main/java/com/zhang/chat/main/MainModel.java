@@ -24,14 +24,16 @@ import com.zhang.chat.utils.ShareUtil;
 public class MainModel extends MainContract.MainModel {
     private FriendDao friendDao;
     private MessageDao messageDao;
-    private final MessageListDao listDao;
-    private final VerificationDao verificationDao;
+    private  MessageListDao listDao;
+    private  VerificationDao verificationDao;
 
     public MainModel() {
         friendDao = getSession().getFriendDao();
-        messageDao = getSession().getMessageDao();
-        listDao = getSession().getMessageListDao();
-        verificationDao = getSession().getVerificationDao();
+        if(getSession() != null){
+            messageDao = getSession().getMessageDao();
+            listDao = getSession().getMessageListDao();
+            verificationDao = getSession().getVerificationDao();
+        }
     }
 
 

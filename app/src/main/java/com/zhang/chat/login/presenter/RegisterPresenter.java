@@ -54,7 +54,7 @@ public class RegisterPresenter extends RegisterContract.Presenter {
         user.setUser_sex(sex);
         user.setUser_real_name(realName);
         user.setUser_password(password);
-        user.setUser_name(realName);
+        user.setUser_name(name);
         user.setUser_phone(phone);
 
         mModel.register(user).subscribe(new ApiSubscribe<User>(context, TAG, 0, false) {

@@ -14,9 +14,9 @@ public class UrlConstant {
 //        public static final String SOCKET_HOST = "192.168.31.123";
     public static final int SOCKET_PORT = 9000;
 
-    public static final String BASE_FILE_URL = String.valueOf(Host + PORT + "/WeChat");//文件服务器
+    public static final String BASE_FILE_URL = String.valueOf(Host + PORT + "/WeChat_Interface/");//文件服务器
 
-    public static final String BASE_URL = String.valueOf(Host + PORT + "/WeChat/");//测试服务器
+    public static final String BASE_URL = String.valueOf(Host + PORT + "/WeChat_Interface/");//测试服务器
 //
 
     /**

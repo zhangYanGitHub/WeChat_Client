@@ -41,9 +41,7 @@ public interface ChatFragmentContract {
 
         public abstract Observable<ListMessage> getMessageList();
 
-        public abstract void add(ListMessage messages);
 
-        public abstract void add(Message message);
 
         public abstract void update(MessageList stringLocalChat);
     }
