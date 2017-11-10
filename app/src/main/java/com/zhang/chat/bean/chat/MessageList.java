@@ -19,7 +19,7 @@ public class MessageList {
      * (消息ID)    主键，自增
      */
     @Id(autoincrement = true)
-    private Long M_ID;
+    private long m_id;
     /**
      * 消息内容
      */
@@ -71,11 +71,11 @@ public class MessageList {
     }
 
     public Long getM_ID() {
-        return this.M_ID;
+        return this.m_id;
     }
 
     public void setM_ID(Long M_ID) {
-        this.M_ID = M_ID;
+        this.m_id = M_ID;
     }
 
     public String getM_PostMessages() {
@@ -144,7 +144,7 @@ public class MessageList {
 
 
     public MessageList(Message message, int newNumber) {
-        M_ID = message.getM_ID();
+        m_id = message.getM_ID();
         this.M_Time = message.getM_Time();
         this.M_PostMessages = message.getM_PostMessages();
         this.M_FromUserID = message.getM_FromUserID();
@@ -155,11 +155,11 @@ public class MessageList {
         this.keyFlag = String.valueOf(M_FromUserID + "" + M_ToUserID);
     }
 
-    @Generated(hash = 1224774890)
-    public MessageList(Long M_ID, String M_PostMessages, int M_status, String M_Time,
-                       int M_MessagesTypeID, long M_ToUserID, long M_FromUserID, int newNumber,
-                       String keyFlag) {
-        this.M_ID = M_ID;
+    @Generated(hash = 172152387)
+    public MessageList(long m_id, String M_PostMessages, int M_status, String M_Time,
+            int M_MessagesTypeID, long M_ToUserID, long M_FromUserID, int newNumber,
+            String keyFlag) {
+        this.m_id = m_id;
         this.M_PostMessages = M_PostMessages;
         this.M_status = M_status;
         this.M_Time = M_Time;
@@ -173,6 +173,8 @@ public class MessageList {
     @Generated(hash = 1974901781)
     public MessageList() {
     }
+
+   
 
 
     public void setFriend_Name(String friend_Name) {
@@ -197,5 +199,13 @@ public class MessageList {
         }else {
             return String.valueOf(getM_ToUserID() + "" + this.getM_FromUserID());
         }
+    }
+
+    public long getM_id() {
+        return this.m_id;
+    }
+
+    public void setM_id(long m_id) {
+        this.m_id = m_id;
     }
 }

@@ -68,8 +68,8 @@ public class CustomSubSearchBar extends RelativeLayout {
         ButterKnife.bind(this);
         TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.CustomSearchBar);
         if (attributes != null) {
-            int titleBarBackGround = attributes.getResourceId(R.styleable.CustomSearchBar_background_search_title_bar, Color.WHITE);
-            this.setBackgroundColor(titleBarBackGround);
+            int titleBarBackGround = attributes.getResourceId(R.styleable.CustomSearchBar_background_search_title_bar, R.color.White_FFFFFF);
+            this.setBackgroundColor(getResources().getColor(titleBarBackGround));
 
             boolean isImage1Visible = attributes.getBoolean(R.styleable.CustomSearchBar_iv_voice_1_visible, false);
             ivImageVioce.setVisibility(isImage1Visible ? VISIBLE : GONE);
@@ -127,6 +127,10 @@ public class CustomSubSearchBar extends RelativeLayout {
             return true;
         });
 
+    }
+
+    public EditText getEtSearch() {
+        return etSearch;
     }
 
     /**

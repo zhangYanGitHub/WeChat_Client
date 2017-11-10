@@ -3,6 +3,7 @@ package com.zhang.chat.login.presenter;
 import com.zhang.chat.R;
 import com.zhang.chat.bean.MainData;
 import com.zhang.chat.bean.User;
+import com.zhang.chat.corelib.utils.AppLog;
 import com.zhang.chat.db.GreenDaoManager;
 import com.zhang.chat.login.contract.LoginContract;
 import com.zhang.chat.net.ApiSubscribe;
@@ -11,8 +12,13 @@ import com.zhang.chat.utils.ShareUtil;
 import com.zhang.chat.utils.StrUtil;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by 张俨 on 2017/9/8.
@@ -48,11 +54,7 @@ public class LoginPresenter extends LoginContract.Presenter {
         mModel.login(account, password).subscribe(new ApiSubscribe<MainData>(context, TAG, 0, true) {
             @Override
             public void onSuccess(int whichRequest, MainData mainData) {
-                ShareUtil.setPreferStr(Constant.USER_NAME, String.valueOf(mainData.getUser().getM_Id()));
-                mainData.getUser().setU_UserState(1);
-                GreenDaoManager.getInstance().initUserData();
-                mModel.save(mainData);
-                jump();
+                jump(mainData);
             }
 
             @Override
@@ -65,15 +67,46 @@ public class LoginPresenter extends LoginContract.Presenter {
     }
 
 
-    private void jump() {
-        Observable.empty()
+    private void jump(MainData mainData) {
+        Observable.create(new ObservableOnSubscribe<Object>() {
+            @Override
+            public void subscribe(ObservableEmitter<Object> e) throws Exception {
+
+                if (mainData != null) {
+                    ShareUtil.setPreferStr(Constant.USER_NAME, String.valueOf(mainData.getUser().getM_Id()));
+                    mainData.getUser().setU_UserState(1);
+                    GreenDaoManager.getInstance().initUserData();
+                    mModel.save(mainData);
+                }
+                String name = Thread.currentThread().getName();
+                AppLog.e(TAG + "  jump()  subscribe() thread_name == " + name);
+                e.onNext("");
+            }
+        }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .doAfterTerminate(new Action() {
+                .subscribe(new Observer<Object>() {
                     @Override
-                    public void run() throws Exception {
-                        mView.update();
+                    public void onSubscribe(Disposable d) {
+
                     }
-                }).subscribe();
+
+                    @Override
+                    public void onNext(Object value) {
+                        mView.update();
+                        String name = Thread.currentThread().getName();
+                        AppLog.e(TAG + "  jump()  onNext() thread_name == " + name);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
 
     }
 }

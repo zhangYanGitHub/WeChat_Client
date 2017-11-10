@@ -16,6 +16,9 @@ import okhttp3.Response;
  */
 
 public class ReceivedCookieIntercepter implements Interceptor {
+
+    private static ReceivedCookieIntercepter instance;
+
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
@@ -32,5 +35,15 @@ public class ReceivedCookieIntercepter implements Interceptor {
         String token = ShareUtil.getPreferStr(Constant.COOKIES_TOKEN);
         return token;
 
+    }
+    public static Interceptor getInstance() {
+        if (instance == null) {
+            synchronized (ReceivedCookieIntercepter.class) {
+                if (instance == null) {
+                    instance = new ReceivedCookieIntercepter();
+                }
+            }
+        }
+        return instance;
     }
 }

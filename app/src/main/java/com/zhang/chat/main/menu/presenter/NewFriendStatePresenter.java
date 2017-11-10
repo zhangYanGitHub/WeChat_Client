@@ -3,6 +3,7 @@ package com.zhang.chat.main.menu.presenter;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zhang.chat.bean.Friend;
 import com.zhang.chat.bean.chat.Verification;
 import com.zhang.chat.main.menu.contract.NewFriendStateContract;
 import com.zhang.chat.netty.FutureListener;
@@ -53,6 +54,11 @@ public class NewFriendStatePresenter extends NewFriendStateContract.Presenter {
     @Override
     public List<Verification> getList() {
         return verifications;
+    }
+
+    @Override
+    public Friend getFriend(Verification verification) {
+        return mModel.getFriend(verification);
     }
 
     @Override

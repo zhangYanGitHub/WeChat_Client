@@ -6,11 +6,13 @@ import android.graphics.Color;
 import android.support.v7.widget.LinearLayoutManager;
 
 import butterknife.BindView;
+
 import com.zhang.chat.R;
 import com.zhang.chat.base.BaseActivity;
 import com.zhang.chat.corelib.recycleview.IRecyclerView;
 import com.zhang.chat.corelib.recycleview.LoadMoreFooterView;
 import com.zhang.chat.main.adapter.NewFriendStateAdapter;
+import com.zhang.chat.main.chat.activity.FriendDataActivity;
 import com.zhang.chat.main.menu.contract.NewFriendStateContract;
 import com.zhang.chat.main.menu.model.NewFriendStateModel;
 import com.zhang.chat.main.menu.presenter.NewFriendStatePresenter;
@@ -58,7 +60,7 @@ public class NewFriendStateActivity extends BaseActivity<NewFriendStatePresenter
         recycleView.setAdapter(adapter);
         mPresenter.getVerificationList();
         adapter.setOnItemClickListener(position -> {
-
+            FriendDataActivity.startAction(NewFriendStateActivity.this, mPresenter.getFriend(mPresenter.getList().get(position)), 1);
         });
         adapter.setOnItemStateClickListener(position -> {
             mPresenter.setState(position);

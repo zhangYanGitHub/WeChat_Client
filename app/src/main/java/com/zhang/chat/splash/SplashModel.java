@@ -33,14 +33,14 @@ import io.reactivex.schedulers.Schedulers;
 public class SplashModel extends SplashContract.SplashModel {
 
     private UserDao userDao;
-    private  MessageListDao messageListDao;
-    private  VerificationDao verificationDao;
-    private  FriendDao friendDao;
-    private  MessageDao messageDao;
+    private MessageListDao messageListDao;
+    private VerificationDao verificationDao;
+    private FriendDao friendDao;
+    private MessageDao messageDao;
 
     public SplashModel() {
         userDao = getUserDao();
-        if(getSession() != null){
+        if (getSession() != null) {
             messageListDao = getSession().getMessageListDao();
             friendDao = getSession().getFriendDao();
             verificationDao = getSession().getVerificationDao();
@@ -61,8 +61,7 @@ public class SplashModel extends SplashContract.SplashModel {
 
     @Override
     public Observable<MainData> getUserData(long m_id) {
-        return RetrofitProvider.getService().getUserData(String.valueOf(m_id)).flatMap(new ApiFunction<MainData>()).subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.io());
+        return RetrofitProvider.getService().getUserData().flatMap(new ApiFunction<MainData>()).compose(RxSchedulers.io_main());
     }
 
     @Override
@@ -73,23 +72,32 @@ public class SplashModel extends SplashContract.SplashModel {
         List<Verification> verifications = mainData.getVerifications();
         List<Message> messageList2 = mainData.getMessageList();
 
-        userDao.save(user);
-        for (Friend friend : friends) {
-            friendDao.save(friend);
+        if (ListUtil.isNotEmpty(friends)) {
+            for (Friend friend : friends) {
+                friendDao.insertOrReplace(friend);
+            }
+        }
+        userDao.insertOrReplace(user);
+
+        if (ListUtil.isNotEmpty(verifications)) {
+            for (Verification verification : verifications) {
+                verificationDao.insertOrReplace(verification);
+            }
         }
 
-        for (Verification verification : verifications) {
-            verificationDao.save(verification);
-        }
-        for (Message message : messageList2) {
-            message.setIsRead(false);
-            messageDao.save(message);
-        }
+        if (ListUtil.isNotEmpty(latestMessage)) {
 
-        for (MainData.MessageList messageList : latestMessage) {
-            messageListDao.deleteAll();
-            MessageList messageList1 = new MessageList(messageList.getMessage(), messageList.getNumber());
-            messageListDao.save(messageList1);
+            for (MainData.MessageList messageList : latestMessage) {
+                messageListDao.deleteAll();
+                MessageList messageList1 = new MessageList(messageList.getMessage(), messageList.getNumber());
+                messageListDao.insertOrReplace(messageList1);
+            }
+        }
+        if (ListUtil.isNotEmpty(messageList2)) {
+            for (Message message : messageList2) {
+                message.setIsRead(false);
+                messageDao.insertOrReplace(message);
+            }
         }
     }
 

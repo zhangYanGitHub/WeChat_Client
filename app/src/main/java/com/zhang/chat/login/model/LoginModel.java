@@ -15,6 +15,7 @@ import com.zhang.chat.login.contract.LoginContract;
 import com.zhang.chat.net.ApiFunction;
 import com.zhang.chat.net.RetrofitProvider;
 import com.zhang.chat.net.RxSchedulers;
+import com.zhang.chat.utils.ListUtil;
 
 import java.util.List;
 
@@ -75,19 +76,26 @@ public class LoginModel extends LoginContract.Model {
         User user = mainData.getUser();
         List<Verification> verifications = mainData.getVerifications();
 
-        for (Friend friend : friends) {
-            friendDao.save(friend);
+        if (ListUtil.isNotEmpty(friends)) {
+            for (Friend friend : friends) {
+                friendDao.insertOrReplace(friend);
+            }
         }
-        userDao.save(user);
+        userDao.insertOrReplace(user);
 
-        for (Verification verification : verifications) {
-            verificationDao.save(verification);
+        if (ListUtil.isNotEmpty(verifications)) {
+            for (Verification verification : verifications) {
+                verificationDao.insertOrReplace(verification);
+            }
         }
 
-        for (MainData.MessageList messageList : latestMessage) {
-            messageListDao.deleteAll();
-            MessageList messageList1 = new MessageList(messageList.getMessage(), messageList.getNumber());
-            messageListDao.save(messageList1);
+        if (ListUtil.isNotEmpty(latestMessage)) {
+
+            for (MainData.MessageList messageList : latestMessage) {
+                messageListDao.deleteAll();
+                MessageList messageList1 = new MessageList(messageList.getMessage(), messageList.getNumber());
+                messageListDao.insertOrReplace(messageList1);
+            }
         }
     }
 }

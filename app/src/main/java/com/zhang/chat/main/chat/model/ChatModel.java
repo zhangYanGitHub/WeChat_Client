@@ -52,7 +52,7 @@ public class ChatModel extends ChatContract.Model {
 
     @Override
     public User getUser() {
-        List<User> list = userDao.queryBuilder().where(UserDao.Properties.M_Id.eq(Long.parseLong(ShareUtil.getPreferStr(Constant.USER_NAME)))).list();
+        List<User> list = userDao.queryBuilder().where(UserDao.Properties.M_id.eq(Long.parseLong(ShareUtil.getPreferStr(Constant.USER_NAME)))).list();
 
         if (ListUtil.isEmpty(list)) return null;
         User user = list.get(0);
@@ -112,7 +112,7 @@ public class ChatModel extends ChatContract.Model {
             name = friend.getUser_name();
         }
         if (ListUtil.isEmpty(list)) {
-            MessageList messageList = new MessageList(null, message.getM_PostMessages(),
+            MessageList messageList = new MessageList(0, message.getM_PostMessages(),
                     message.getM_status(), message.getM_Time(), message.getM_MessagesTypeID(), message.getM_ToUserID(), message.getM_FromUserID()
                     , 0, key);
             messageList.setFriend_Name(name);

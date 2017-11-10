@@ -33,6 +33,7 @@ public interface NewFriendStateContract {
 
         public abstract List<Verification> getList();
 
+        public abstract Friend getFriend(Verification verification);
 
         public abstract void setState(int position);
     }
@@ -47,6 +48,7 @@ public interface NewFriendStateContract {
 
         public abstract List<Verification> getVerificationList();
 
+        public abstract Friend getFriend(Verification verification);
 
         public abstract void update(Verification friend);
     }

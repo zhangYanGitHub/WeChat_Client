@@ -1,5 +1,6 @@
 package com.zhang.chat.base;
 
+import android.app.ProgressDialog;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
+
 import com.zhang.chat.R;
 import com.zhang.chat.app.AppManager;
 import com.zhang.chat.corelib.flyn.Eyes;
@@ -23,6 +25,7 @@ public abstract class BaseActivity<T extends BasePresenter, M extends BaseModel>
     protected M mModel;
     protected String TAG;
     private boolean isConfigChange;
+    private ProgressDialog mDialog;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -83,6 +86,24 @@ public abstract class BaseActivity<T extends BasePresenter, M extends BaseModel>
 
         if (!isConfigChange) {
             AppManager.getAppManager().finishActivity(this);
+        }
+        dismissDialog();
+    }
+
+    public void showDialog() {
+        if (mDialog == null) {
+            mDialog = new ProgressDialog(this,
+                    R.style.AppTheme_Dark_Dialog);
+            mDialog.setIndeterminate(true);
+            mDialog.setMessage("正在加载中");
+        }
+        mDialog.show();
+    }
+
+    public void dismissDialog() {
+        if (mDialog != null) {
+            mDialog.dismiss();
+            mDialog = null;
         }
     }
 

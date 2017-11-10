@@ -12,6 +12,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 import com.zhang.chat.R;
 import com.zhang.chat.bean.chat.Verification;
 import com.zhang.chat.corelib.adapter.BaseReclyerViewAdapter;
@@ -23,6 +24,7 @@ import com.zhang.chat.utils.ShareUtil;
 
 /**
  * Created by 张俨 on 2017/10/20.
+ * 新朋友
  */
 
 public class NewFriendStateAdapter extends BaseReclyerViewAdapter<Verification, NewFriendStateAdapter.ViewHolder> {

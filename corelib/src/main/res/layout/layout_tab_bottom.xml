@@ -27,7 +27,7 @@
 
     </LinearLayout>
 
-    <chat.zhang.com.corelib.widget.MsgView
+    <com.zhang.chat.corelib.widget.MsgView
         android:id="@+id/rtv_msg_tip"
         xmlns:mv="http://schemas.android.com/apk/res-auto"
         android:layout_width="wrap_content"

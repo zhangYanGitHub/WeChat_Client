@@ -24,7 +24,7 @@ public class MessageListDao extends AbstractDao<MessageList, Long> {
      * Can be used for QueryBuilder and for referencing column names.
      */
     public static class Properties {
-        public final static Property M_ID = new Property(0, Long.class, "M_ID", true, "_id");
+        public final static Property M_id = new Property(0, long.class, "m_id", true, "_id");
         public final static Property M_PostMessages = new Property(1, String.class, "M_PostMessages", false, "M__POST_MESSAGES");
         public final static Property M_status = new Property(2, int.class, "M_status", false, "M_STATUS");
         public final static Property M_Time = new Property(3, String.class, "M_Time", false, "M__TIME");
@@ -48,7 +48,7 @@ public class MessageListDao extends AbstractDao<MessageList, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"MESSAGE_LIST\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: M_ID
+                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," + // 0: m_id
                 "\"M__POST_MESSAGES\" TEXT," + // 1: M_PostMessages
                 "\"M_STATUS\" INTEGER NOT NULL ," + // 2: M_status
                 "\"M__TIME\" TEXT," + // 3: M_Time
@@ -68,11 +68,7 @@ public class MessageListDao extends AbstractDao<MessageList, Long> {
     @Override
     protected final void bindValues(DatabaseStatement stmt, MessageList entity) {
         stmt.clearBindings();
- 
-        Long M_ID = entity.getM_ID();
-        if (M_ID != null) {
-            stmt.bindLong(1, M_ID);
-        }
+        stmt.bindLong(1, entity.getM_id());
  
         String M_PostMessages = entity.getM_PostMessages();
         if (M_PostMessages != null) {
@@ -98,11 +94,7 @@ public class MessageListDao extends AbstractDao<MessageList, Long> {
     @Override
     protected final void bindValues(SQLiteStatement stmt, MessageList entity) {
         stmt.clearBindings();
- 
-        Long M_ID = entity.getM_ID();
-        if (M_ID != null) {
-            stmt.bindLong(1, M_ID);
-        }
+        stmt.bindLong(1, entity.getM_id());
  
         String M_PostMessages = entity.getM_PostMessages();
         if (M_PostMessages != null) {
@@ -127,13 +119,13 @@ public class MessageListDao extends AbstractDao<MessageList, Long> {
 
     @Override
     public Long readKey(Cursor cursor, int offset) {
-        return cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0);
+        return cursor.getLong(offset + 0);
     }    
 
     @Override
     public MessageList readEntity(Cursor cursor, int offset) {
         MessageList entity = new MessageList( //
-            cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // M_ID
+            cursor.getLong(offset + 0), // m_id
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // M_PostMessages
             cursor.getInt(offset + 2), // M_status
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // M_Time
@@ -148,7 +140,7 @@ public class MessageListDao extends AbstractDao<MessageList, Long> {
      
     @Override
     public void readEntity(Cursor cursor, MessageList entity, int offset) {
-        entity.setM_ID(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
+        entity.setM_id(cursor.getLong(offset + 0));
         entity.setM_PostMessages(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setM_status(cursor.getInt(offset + 2));
         entity.setM_Time(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
@@ -161,14 +153,14 @@ public class MessageListDao extends AbstractDao<MessageList, Long> {
     
     @Override
     protected final Long updateKeyAfterInsert(MessageList entity, long rowId) {
-        entity.setM_ID(rowId);
+        entity.setM_id(rowId);
         return rowId;
     }
     
     @Override
     public Long getKey(MessageList entity) {
         if(entity != null) {
-            return entity.getM_ID();
+            return entity.getM_id();
         } else {
             return null;
         }
@@ -176,7 +168,7 @@ public class MessageListDao extends AbstractDao<MessageList, Long> {
 
     @Override
     public boolean hasKey(MessageList entity) {
-        return entity.getM_ID() != null;
+        throw new UnsupportedOperationException("Unsupported for entities with a non-null key");
     }
 
     @Override

@@ -28,8 +28,8 @@ public class MainModel extends MainContract.MainModel {
     private  VerificationDao verificationDao;
 
     public MainModel() {
-        friendDao = getSession().getFriendDao();
         if(getSession() != null){
+            friendDao = getSession().getFriendDao();
             messageDao = getSession().getMessageDao();
             listDao = getSession().getMessageListDao();
             verificationDao = getSession().getVerificationDao();
@@ -70,7 +70,7 @@ public class MainModel extends MainContract.MainModel {
             name = friend.getUser_name();
         }
         if (ListUtil.isEmpty(list)) {
-            MessageList messageList = new MessageList(null, message.getM_PostMessages(),
+            MessageList messageList = new MessageList(0, message.getM_PostMessages(),
                     message.getM_status(), message.getM_Time(), message.getM_MessagesTypeID(), message.getM_ToUserID(), message.getM_FromUserID()
                     , 0, key);
             messageList.setFriend_Name(name);
@@ -123,7 +123,7 @@ public class MainModel extends MainContract.MainModel {
 
     @Override
     public void addBySocket(Friend deserialize) {
-        friendDao.save(deserialize);
+        friendDao.insertOrReplace(deserialize);
     }
 
     @Override

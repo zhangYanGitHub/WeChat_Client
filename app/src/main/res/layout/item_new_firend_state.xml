@@ -2,70 +2,82 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/selector_mine"
-    android:orientation="horizontal"
-    android:paddingBottom="@dimen/x10"
-    android:paddingLeft="@dimen/x20"
-    android:paddingRight="@dimen/x20"
-    android:paddingTop="@dimen/x10">
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/iv_face"
-        android:layout_width="@dimen/x90"
-        android:layout_height="@dimen/x90"
-        android:scaleType="fitXY"
-        android:src="@drawable/img_face" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:paddingLeft="@dimen/x20">
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="微信号"
-            android:textColor="@color/Black_666666"
-            android:textSize="@dimen/x28" />
-
-        <View
-            android:layout_width="@dimen/x1"
-            android:layout_height="@dimen/x5" />
-
-        <TextView
-            android:id="@+id/tv_message"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="打招呼"
-            android:textColor="@color/Gray_999999"
-            android:textSize="@dimen/x24" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_add"
-        android:layout_width="wrap_content"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="已添加"
-        android:textColor="@color/Gray_999999"
-        android:textSize="@dimen/x24"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/tv_verification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="@color/Green_00A653"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
         android:paddingBottom="@dimen/x10"
         android:paddingLeft="@dimen/x20"
         android:paddingRight="@dimen/x20"
-        android:paddingTop="@dimen/x10"
-        android:text="接受"
-        android:textColor="@color/White_FFFFFF"
-        android:textSize="@dimen/x24" />
+        android:paddingTop="@dimen/x10">
+
+        <ImageView
+            android:id="@+id/iv_face"
+            android:layout_width="@dimen/x90"
+            android:layout_height="@dimen/x90"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_face" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/x20">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="微信号"
+                android:textColor="@color/Black_666666"
+                android:textSize="@dimen/x28" />
+
+            <View
+                android:layout_width="@dimen/x1"
+                android:layout_height="@dimen/x5" />
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="打招呼"
+                android:textColor="@color/Gray_999999"
+                android:textSize="@dimen/x24" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="已添加"
+            android:textColor="@color/Gray_999999"
+            android:textSize="@dimen/x24"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_verification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/Green_00A653"
+            android:paddingBottom="@dimen/x10"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/x10"
+            android:text="接受"
+            android:textColor="@color/White_FFFFFF"
+            android:textSize="@dimen/x24" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/Gray_CCCCCC" />
 </LinearLayout>

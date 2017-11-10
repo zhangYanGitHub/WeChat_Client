@@ -2,25 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/selector_mine"
-    android:orientation="horizontal">
-    <ImageView
-        android:id="@+id/iv_face"
-        android:paddingRight="@dimen/x20"
-        android:paddingTop="@dimen/y10"
-        android:paddingLeft="@dimen/x10"
-        android:paddingBottom="@dimen/y10"
-        android:scaleType="fitXY"
-        android:layout_width="@dimen/x110"
-        android:layout_height="@dimen/y100"
-        android:src="@drawable/new_friend" />
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="张三"
-        android:textColor="@color/Black_666666"
-        android:textSize="@dimen/x30" />
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_face"
+            android:layout_width="@dimen/x110"
+            android:layout_height="@dimen/y100"
+            android:paddingBottom="@dimen/y10"
+            android:paddingLeft="@dimen/x10"
+            android:paddingRight="@dimen/x20"
+            android:paddingTop="@dimen/y10"
+            android:scaleType="fitXY"
+            android:src="@drawable/new_friend" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="张三"
+            android:textColor="@color/Black_666666"
+            android:textSize="@dimen/x30" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/Gray_CCCCCC" />
 </LinearLayout>

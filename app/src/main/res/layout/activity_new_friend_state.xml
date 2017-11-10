@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/Gray_F5F5F5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Gray_F5F5F5"
     android:orientation="vertical"
     tools:context="com.zhang.chat.main.menu.activity.NewFriendStateActivity">
 
@@ -19,11 +19,12 @@
         app:text_save="添加朋友"
         app:title_text="新朋友" />
 
+    <include layout="@layout/view_decoration_40" />
+
     <com.zhang.chat.view.SubSearch
         android:id="@+id/title_sub_bar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x40"
         android:paddingLeft="@dimen/x20"
         android:paddingRight="@dimen/x20"
         app:iv_voice_1_visible="false"
@@ -43,8 +44,8 @@
     <com.zhang.chat.corelib.recycleview.IRecyclerView
         android:id="@+id/recycle_view"
         android:layout_width="match_parent"
-        app:refreshEnabled="false"
-        app:loadMoreFooterLayout="@layout/item_footer"
+        android:layout_height="match_parent"
         app:loadMoreEnabled="false"
-        android:layout_height="match_parent" />
+        app:loadMoreFooterLayout="@layout/item_footer"
+        app:refreshEnabled="false" />
 </LinearLayout>

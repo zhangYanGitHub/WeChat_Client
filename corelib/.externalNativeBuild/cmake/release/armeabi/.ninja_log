@@ -5,3 +5,5 @@
 102	167	0	../../../../build/intermediates/cmake/release/obj/armeabi/libnative-lib.so	5c5e63f6d2c432d0
 1	102	0	CMakeFiles/native-lib.dir/src/main/jni/native-lib.c.o	1a560de792acf391
 102	171	0	../../../../build/intermediates/cmake/release/obj/armeabi/libnative-lib.so	5c5e63f6d2c432d0
+1	111	0	CMakeFiles/native-lib.dir/src/main/jni/native-lib.c.o	1a560de792acf391
+111	236	0	../../../../build/intermediates/cmake/release/obj/armeabi/libnative-lib.so	5c5e63f6d2c432d0

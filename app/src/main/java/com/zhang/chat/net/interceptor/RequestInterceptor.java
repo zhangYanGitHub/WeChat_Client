@@ -18,6 +18,9 @@ import okhttp3.Response;
  */
 
 public class RequestInterceptor implements Interceptor {
+
+    private static RequestInterceptor instance;
+
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request oldRequest = chain.request();
@@ -31,7 +34,7 @@ public class RequestInterceptor implements Interceptor {
                 .scheme(oldRequest.url().scheme())
                 .host(oldRequest.url().host());
         if (StrUtil.isNotBlank(preferStr)) {
-            authorizedUrlBuilder.addQueryParameter("user_id", preferStr);
+            authorizedUrlBuilder.addQueryParameter("m_id", preferStr);
         }
 
         // 新的请求
@@ -41,5 +44,15 @@ public class RequestInterceptor implements Interceptor {
                 .build();
         AppLog.w("---------------------------------http request------------------\n\n" + newRequest.toString() + "\n\n---------------------------------http request------------------");
         return chain.proceed(newRequest);
+    }
+    public static Interceptor getInstance() {
+        if (instance == null) {
+            synchronized (RequestInterceptor.class) {
+                if (instance == null) {
+                    instance = new RequestInterceptor();
+                }
+            }
+        }
+        return instance;
     }
 }

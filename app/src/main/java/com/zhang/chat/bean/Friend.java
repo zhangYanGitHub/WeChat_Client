@@ -29,7 +29,6 @@ public class Friend implements Comparable<Friend>, Serializable {
     private String user_phone;
     private String user_account;
     private String user_img_face_path;
-
     /**
      * 备注昵称    Null
      */
@@ -89,6 +88,9 @@ public class Friend implements Comparable<Friend>, Serializable {
     public Friend() {
     }
 
+   
+
+
     public long getF_id() {
         return f_id;
     }
@@ -96,8 +98,6 @@ public class Friend implements Comparable<Friend>, Serializable {
     public void setF_id(long f_id) {
         this.f_id = f_id;
     }
-
-
 
 
     @Override
@@ -224,5 +224,13 @@ public class Friend implements Comparable<Friend>, Serializable {
 
     public boolean getFriend_state() {
         return this.friend_state;
+    }
+
+    public long getM_id() {
+        return this.user_id;
+    }
+
+    public void setM_id(long m_id) {
+        this.user_id = m_id;
     }
 }

@@ -7,7 +7,10 @@ import android.content.Context;
 import com.zhang.chat.app.ApiManager;
 import com.zhang.chat.app.App;
 import com.zhang.chat.R;
+import com.zhang.chat.app.AppManager;
+import com.zhang.chat.base.BaseActivity;
 import com.zhang.chat.utils.NetWorkUtils;
+
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
@@ -22,29 +25,26 @@ public abstract class ApiSubscribe<T> implements Observer<T> {
     private int whichRequest;
     private boolean isShowDialog;
     private ApiManager mRxManager;
-    private static ProgressDialog mDialog;
+    private ProgressDialog mDialog;
 
     public ApiSubscribe(Context context, String key, int whichRequest, boolean isShowDialog) {
 
-        if (mDialog != null && mDialog.isShowing() && !((Activity) context).isFinishing()) {
-            mDialog.dismiss();
-        }
+
         this.context = context;
         this.key = key;
         this.whichRequest = whichRequest;
         this.isShowDialog = isShowDialog;
         mRxManager = ApiManager.get();
-        mDialog = new ProgressDialog(context,
-                R.style.AppTheme_Dark_Dialog);
-        mDialog.setIndeterminate(true);
-        mDialog.setMessage("正在加载中");
+
     }
 
     @Override
     public void onSubscribe(Disposable d) {
         mRxManager.add(key, d);
-        if (isShowDialog) {
-            mDialog.show();
+        BaseActivity baseActivity = AppManager.getAppManager().currentActivity();
+        if (baseActivity.getClass().equals(((BaseActivity) context).getClass()) && isShowDialog) {
+            baseActivity.showDialog();
+        } else {
         }
         this.onStart(whichRequest);
     }
@@ -57,28 +57,35 @@ public abstract class ApiSubscribe<T> implements Observer<T> {
     public final void onNext(T value) {
         if (!((Activity) context).isFinishing())
             onSuccess(whichRequest, value);
+        BaseActivity baseActivity = AppManager.getAppManager().currentActivity();
+        if (baseActivity.getClass().equals(((BaseActivity) context).getClass())) {
+            baseActivity.dismissDialog();
+        } else {
+        }
     }
 
     @Override
     public void onError(Throwable e) {
-        if (mDialog.isShowing()) {
-            mDialog.dismiss();
-        }
 
         //网络
         if (!NetWorkUtils.isNetConnected(App.getApplication())) {
             onError(whichRequest, new RuntimeException(App.getApplication().getString(R.string.no_net)));
         }
-
+        BaseActivity baseActivity = AppManager.getAppManager().currentActivity();
+        if (baseActivity.getClass().equals(((BaseActivity) context).getClass())) {
+            baseActivity.dismissDialog();
+        } else {
+        }
 
         onError(whichRequest, e);
     }
 
     @Override
     public void onComplete() {
-        if (mDialog.isShowing()) {
-            mDialog.dismiss();
-            mDialog = null;
+        BaseActivity baseActivity = AppManager.getAppManager().currentActivity();
+        if (baseActivity.getClass().equals(((BaseActivity) context).getClass())) {
+            baseActivity.dismissDialog();
+        } else {
         }
     }
 

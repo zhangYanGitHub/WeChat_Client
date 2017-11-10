@@ -6,6 +6,7 @@ import com.zhang.chat.corelib.utils.AppLog;
 import com.zhang.chat.net.UrlConstant;
 import com.zhang.chat.utils.Constant;
 import com.zhang.chat.utils.ShareUtil;
+
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -15,6 +16,9 @@ import okhttp3.Response;
  */
 
 public class AddCookieIntercepter implements Interceptor {
+
+    private static Interceptor instance;
+
     @Override
     public Response intercept(Chain chain) throws IOException {
         okhttp3.Response originalResponse = chain.proceed(chain.request());
@@ -25,8 +29,19 @@ public class AddCookieIntercepter implements Interceptor {
         if (!originalResponse.headers("Set-Cookie").isEmpty()) {
             String header = originalResponse.header("set-Cookie");
             ShareUtil.setPreferStr(Constant.COOKIES_TOKEN, header);
-            AppLog.e("AddCookieIntercepter  cookie = "+ header);
+            AppLog.e("AddCookieIntercepter  cookie = " + header);
         }
         return originalResponse;
+    }
+
+    public static Interceptor getInstance() {
+        if (instance == null) {
+            synchronized (AddCookieIntercepter.class) {
+                if (instance == null) {
+                    instance = new AddCookieIntercepter();
+                }
+            }
+        }
+        return instance;
     }
 }

@@ -7,6 +7,7 @@ import com.zhang.chat.app.App;
 import com.zhang.chat.net.interceptor.AddCookieIntercepter;
 import com.zhang.chat.net.interceptor.ReceivedCookieIntercepter;
 import com.zhang.chat.net.interceptor.RequestInterceptor;
+
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -58,6 +59,7 @@ public class RetrofitProvider {
                     .readTimeout(time, TimeUnit.SECONDS)
                     .connectTimeout(time, TimeUnit.SECONDS)
 //                    .cookieJar(new CookieManger(App.getApplication()))
+                    .addInterceptor( new AddCookieIntercepter())
                     //设置缓存
                     .cache(new Cache(httpCacheDirectory, 10 * 1024 * 1024))
                     //log请求参数

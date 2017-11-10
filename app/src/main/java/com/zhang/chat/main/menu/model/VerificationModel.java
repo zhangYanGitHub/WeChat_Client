@@ -43,7 +43,7 @@ public class VerificationModel extends VerificationContract.Model {
 
     @Override
     public User getUser() {
-        List<User> list = userDao.queryBuilder().where(UserDao.Properties.M_Id.eq(Long.parseLong(ShareUtil.getPreferStr(Constant.USER_NAME)))).list();
+        List<User> list = userDao.queryBuilder().where(UserDao.Properties.M_id.eq(Long.parseLong(ShareUtil.getPreferStr(Constant.USER_NAME)))).list();
         if (ListUtil.isEmpty(list)) {
             return null;
         }

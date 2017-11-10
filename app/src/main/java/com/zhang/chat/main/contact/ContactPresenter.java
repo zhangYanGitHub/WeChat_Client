@@ -17,7 +17,6 @@ import com.zhang.chat.utils.AppToast;
 public class ContactPresenter extends ContactContract.Presenter {
     @Override
     public void onStart() {
-        initData();
     }
 
     @Override
@@ -27,9 +26,7 @@ public class ContactPresenter extends ContactContract.Presenter {
 
     @Override
     public void getFriendList() {
-
         refresh();
-
 
     }
 

@@ -15,7 +15,7 @@ public class User  implements Serializable{
     static final long serialVersionUID = 536871008;
 
     @Id(autoincrement = true)
-    private long M_Id;
+    private long m_id;
     private long uu_id;
     private String user_name;
     private int user_sex = -1;
@@ -59,14 +59,18 @@ public class User  implements Serializable{
         user_name = name;
     }
 
-    @Generated(hash = 2134192155)
-    public User(long M_Id, long uu_id, String user_name, int user_sex,
+
+
+
+
+    @Generated(hash = 360839852)
+    public User(long m_id, long uu_id, String user_name, int user_sex,
             String user_real_name, String user_password, String user_desc,
             String user_phone, String user_account, String user_email,
             String user_img_face_path, long user_register_date, String u_NationID,
             String U_Province, String U_City, int U_FriendshipPolicy,
             int U_UserState) {
-        this.M_Id = M_Id;
+        this.m_id = m_id;
         this.uu_id = uu_id;
         this.user_name = user_name;
         this.user_sex = user_sex;
@@ -85,16 +89,24 @@ public class User  implements Serializable{
         this.U_UserState = U_UserState;
     }
 
+
+
+
+
     @Generated(hash = 586692638)
     public User() {
     }
 
+
+
+
+
     public long getM_Id() {
-        return M_Id;
+        return m_id;
     }
 
     public void setM_Id(long m_Id) {
-        M_Id = m_Id;
+        this.m_id = m_Id;
     }
 
     public long getUu_id() {
@@ -238,6 +250,22 @@ public class User  implements Serializable{
 
     public void setUser_img_face_path(String user_img_face_path) {
         this.user_img_face_path = user_img_face_path;
+    }
+
+
+
+
+
+    public long getM_id() {
+        return this.m_id;
+    }
+
+
+
+
+
+    public void setM_id(long m_id) {
+        this.m_id = m_id;
     }
 
 

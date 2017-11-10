@@ -21,7 +21,7 @@
             android:singleLine="true"/>
     </LinearLayout>
 
-    <chat.zhang.com.corelib.widget.MsgView
+    <com.zhang.chat.corelib.widget.MsgView
         android:layout_toRightOf="@+id/ll_tap"
         android:id="@+id/rtv_msg_tip"
         xmlns:mv="http://schemas.android.com/apk/res-auto"

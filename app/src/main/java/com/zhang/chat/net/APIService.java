@@ -82,7 +82,7 @@ public interface APIService {
      * @return
      */
     @POST(UrlConstant.USER_DATA)
-    Observable<BaseResponse<MainData>> getUserData(@Query("m_id") String m_id);
+    Observable<BaseResponse<MainData>> getUserData();
 
 
 

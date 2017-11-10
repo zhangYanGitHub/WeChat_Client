@@ -67,6 +67,8 @@ public class ContactFragment extends BaseFragment<ContactPresenter, ContactModel
         adapter.setOnClickListener(this);
         rvUserList.setAdapter(adapter);
         initListener();
+
+        mPresenter.initData();
     }
 
     private void initListener() {

@@ -62,7 +62,7 @@ public class PersonalMoreSettingActivity extends BaseActivity<MinePresenter, Min
     void onClick(View view) {
         switch (view.getId()) {
             case R.id.rl_sex:
-                showDialog();
+                showDialog1();
                 break;
             case R.id.rl_address:
                 break;
@@ -74,7 +74,7 @@ public class PersonalMoreSettingActivity extends BaseActivity<MinePresenter, Min
 
     }
 
-    private void showDialog() {
+    private void showDialog1() {
         PersonalSexDialog dialog = new PersonalSexDialog();
         Bundle bundle = new Bundle();
         bundle.putString("sex", user.getUser_sex()+"");

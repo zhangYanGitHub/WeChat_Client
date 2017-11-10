@@ -1,13 +1,24 @@
 package com.zhang.chat.splash;
 
 
+import com.zhang.chat.app.App;
 import com.zhang.chat.bean.MainData;
 import com.zhang.chat.bean.User;
+import com.zhang.chat.corelib.utils.AppLog;
+import com.zhang.chat.db.GreenDaoManager;
 import com.zhang.chat.net.ApiSubscribe;
+import com.zhang.chat.utils.Constant;
+import com.zhang.chat.utils.ShareUtil;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by 张俨 on 2017/9/7.
@@ -25,13 +36,16 @@ public class SplashPresenter extends SplashContract.Presenter {
             mModel.getUserData(user.getM_Id()).subscribe(new ApiSubscribe<MainData>(context, TAG, 0, false) {
                 @Override
                 public void onSuccess(int whichRequest, MainData mainData) {
-                    mModel.save(mainData);
-                    jump();
+                    GreenDaoManager.getInstance().initUserData();
+                    jump(mainData);
+
                 }
 
                 @Override
                 public void onError(int whichRequest, Throwable e) {
-                    jump();
+                    GreenDaoManager.getInstance().initUserData();
+                    e.printStackTrace();
+                    jump(null);
                 }
             });
 
@@ -39,15 +53,43 @@ public class SplashPresenter extends SplashContract.Presenter {
 
     }
 
-    private void jump() {
-        Observable.empty()
+    private void jump(MainData mainData) {
+        Observable.create(new ObservableOnSubscribe<Object>() {
+            @Override
+            public void subscribe(ObservableEmitter<Object> e) throws Exception {
+
+                if (mainData != null) {
+                    GreenDaoManager.getInstance().initUserData();
+                    mModel.save(mainData);
+                }
+                String name = Thread.currentThread().getName();
+                AppLog.e(TAG + "  jump()  subscribe() thread_name == " + name);
+                e.onNext("");
+            }
+        }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .doAfterTerminate(new Action() {
+                .subscribe(new Observer<Object>() {
                     @Override
-                    public void run() throws Exception {
-                        mView.jumpToMain();
+                    public void onSubscribe(Disposable d) {
+
                     }
-                }).subscribe();
+
+                    @Override
+                    public void onNext(Object value) {
+                        mView.jumpToMain();
+                        AppLog.e(TAG + "  jump()  onNext()");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
 
     }
 
