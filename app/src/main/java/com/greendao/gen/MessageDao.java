@@ -24,7 +24,7 @@ public class MessageDao extends AbstractDao<Message, Long> {
      * Can be used for QueryBuilder and for referencing column names.
      */
     public static class Properties {
-        public final static Property M_ID = new Property(0, Long.class, "M_ID", true, "_id");
+        public final static Property M_ID = new Property(0, Long.class, "m_ID", true, "_id");
         public final static Property M_PostMessages = new Property(1, String.class, "M_PostMessages", false, "M__POST_MESSAGES");
         public final static Property M_status = new Property(2, int.class, "M_status", false, "M_STATUS");
         public final static Property M_Time = new Property(3, String.class, "M_Time", false, "M__TIME");
@@ -49,7 +49,7 @@ public class MessageDao extends AbstractDao<Message, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"MESSAGE\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: M_ID
+                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: m_ID
                 "\"M__POST_MESSAGES\" TEXT," + // 1: M_PostMessages
                 "\"M_STATUS\" INTEGER NOT NULL ," + // 2: M_status
                 "\"M__TIME\" TEXT," + // 3: M_Time
@@ -71,9 +71,9 @@ public class MessageDao extends AbstractDao<Message, Long> {
     protected final void bindValues(DatabaseStatement stmt, Message entity) {
         stmt.clearBindings();
  
-        Long M_ID = entity.getM_ID();
-        if (M_ID != null) {
-            stmt.bindLong(1, M_ID);
+        Long m_ID = entity.getM_ID();
+        if (m_ID != null) {
+            stmt.bindLong(1, m_ID);
         }
  
         String M_PostMessages = entity.getM_PostMessages();
@@ -98,9 +98,9 @@ public class MessageDao extends AbstractDao<Message, Long> {
     protected final void bindValues(SQLiteStatement stmt, Message entity) {
         stmt.clearBindings();
  
-        Long M_ID = entity.getM_ID();
-        if (M_ID != null) {
-            stmt.bindLong(1, M_ID);
+        Long m_ID = entity.getM_ID();
+        if (m_ID != null) {
+            stmt.bindLong(1, m_ID);
         }
  
         String M_PostMessages = entity.getM_PostMessages();
@@ -129,7 +129,7 @@ public class MessageDao extends AbstractDao<Message, Long> {
     @Override
     public Message readEntity(Cursor cursor, int offset) {
         Message entity = new Message( //
-            cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // M_ID
+            cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // m_ID
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // M_PostMessages
             cursor.getInt(offset + 2), // M_status
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // M_Time

@@ -5,10 +5,6 @@ import com.greendao.gen.MessageDao;
 import com.greendao.gen.MessageListDao;
 import com.greendao.gen.UserDao;
 
-import org.greenrobot.greendao.query.QueryBuilder;
-
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -16,15 +12,12 @@ import com.zhang.chat.bean.Friend;
 import com.zhang.chat.bean.chat.ListMessage;
 import com.zhang.chat.bean.chat.Message;
 import com.zhang.chat.bean.chat.MessageList;
-import com.zhang.chat.corelib.utils.AppLog;
 import com.zhang.chat.db.GreenDaoManager;
 import com.zhang.chat.main.chat.contract.ChatFragmentContract;
 import com.zhang.chat.net.ApiFunction;
 import com.zhang.chat.net.RetrofitProvider;
 import com.zhang.chat.net.RxSchedulers;
-import com.zhang.chat.utils.Constant;
 import com.zhang.chat.utils.ListUtil;
-import com.zhang.chat.utils.ShareUtil;
 import com.zhang.chat.utils.StrUtil;
 
 import io.reactivex.Observable;

@@ -1,14 +1,15 @@
 package com.zhang.chat.login.model;
 
 import com.greendao.gen.FriendDao;
+import com.greendao.gen.MessageDao;
 import com.greendao.gen.MessageListDao;
 import com.greendao.gen.UserDao;
 
 import com.greendao.gen.VerificationDao;
-import com.zhang.chat.app.App;
 import com.zhang.chat.bean.Friend;
 import com.zhang.chat.bean.MainData;
 import com.zhang.chat.bean.User;
+import com.zhang.chat.bean.chat.Message;
 import com.zhang.chat.bean.chat.MessageList;
 import com.zhang.chat.bean.chat.Verification;
 import com.zhang.chat.corelib.utils.AppLog;
@@ -36,6 +37,7 @@ public class LoginModel extends LoginContract.Model {
     private MessageListDao messageListDao;
     private VerificationDao verificationDao;
     private FriendDao friendDao;
+    private MessageDao messageDao;
 
     public LoginModel() {
         userDao = getUserDao();
@@ -43,6 +45,7 @@ public class LoginModel extends LoginContract.Model {
             messageListDao = getSession().getMessageListDao();
             friendDao = getSession().getFriendDao();
             verificationDao = getSession().getVerificationDao();
+            messageDao = getSession().getMessageDao();
         }
     }
 
@@ -73,9 +76,11 @@ public class LoginModel extends LoginContract.Model {
         messageListDao = getSession().getMessageListDao();
         friendDao = getSession().getFriendDao();
         verificationDao = getSession().getVerificationDao();
+        messageDao = getSession().getMessageDao();
 
         List<Friend> friends = mainData.getFriends();
         List<MainData.MessageList> latestMessage = mainData.getLatestMessage();
+        final List<Message> messageList2 = mainData.getMessageList();
         User user = mainData.getUser();
         List<Verification> verifications = mainData.getVerifications();
 
@@ -93,6 +98,7 @@ public class LoginModel extends LoginContract.Model {
             throw new RuntimeException("list1 != NULL");
 
         } else {
+            user.setU_UserState(1);
             userDao.insertOrReplace(user);
         }
         if (ListUtil.isNotEmpty(verifications)) {
@@ -111,11 +117,16 @@ public class LoginModel extends LoginContract.Model {
                 verificationDao.insertOrReplace(verification);
             }
         }
-
+        if (ListUtil.isNotEmpty(messageList2)) {
+            for (Message message : messageList2) {
+                message.setIsRead(false);
+                messageDao.insertOrReplace(message);
+            }
+        }
         if (ListUtil.isNotEmpty(latestMessage)) {
 
             for (MainData.MessageList messageList : latestMessage) {
-                messageListDao.deleteAll();
+
                 MessageList messageList1 = new MessageList(messageList.getMessage(), messageList.getNumber());
                 messageListDao.insertOrReplace(messageList1);
             }

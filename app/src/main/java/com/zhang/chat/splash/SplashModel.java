@@ -8,7 +8,6 @@ import com.greendao.gen.UserDao;
 import java.util.List;
 
 import com.greendao.gen.VerificationDao;
-import com.zhang.chat.app.App;
 import com.zhang.chat.bean.Friend;
 import com.zhang.chat.bean.MainData;
 import com.zhang.chat.bean.User;
@@ -18,15 +17,11 @@ import com.zhang.chat.bean.chat.Verification;
 import com.zhang.chat.net.ApiFunction;
 import com.zhang.chat.net.RetrofitProvider;
 import com.zhang.chat.net.RxSchedulers;
-import com.zhang.chat.utils.Constant;
 import com.zhang.chat.utils.ListUtil;
-import com.zhang.chat.utils.ShareUtil;
 
 import org.greenrobot.greendao.query.QueryBuilder;
 
 import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by 张俨 on 2017/9/8.
@@ -79,6 +74,7 @@ public class SplashModel extends SplashContract.SplashModel {
                 friendDao.insertOrReplace(friend);
             }
         }
+        user.setU_UserState(1);
         userDao.insertOrReplace(user);
 
         if (ListUtil.isNotEmpty(verifications)) {
@@ -101,9 +97,11 @@ public class SplashModel extends SplashContract.SplashModel {
         if (ListUtil.isNotEmpty(latestMessage)) {
 
             for (MainData.MessageList messageList : latestMessage) {
-                messageListDao.deleteAll();
                 MessageList messageList1 = new MessageList(messageList.getMessage(), messageList.getNumber());
-
+                final List<MessageList> list = messageListDao.queryBuilder().where(MessageListDao.Properties.KeyFlag.eq(messageList1.getKey())).list();
+                if (ListUtil.isNotEmpty(list)) {
+                    messageList1.setM_ID(list.get(0).getM_ID());
+                }
                 messageListDao.insertOrReplace(messageList1);
             }
         }

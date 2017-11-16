@@ -18,7 +18,7 @@ public class Message {
      * (消息ID)    主键，自增
      */
     @Id(autoincrement = true)
-    private Long M_ID;
+    private Long m_ID;
     /**
      * 消息内容
      */
@@ -56,11 +56,34 @@ public class Message {
 
     private boolean isRead = true;
 
-    @Generated(hash = 296910446)
-    public Message(Long M_ID, String M_PostMessages, int M_status, String M_Time,
-                   int M_MessagesTypeID, long M_ToUserID, long M_FromUserID, long flag,
-                   boolean isNew, boolean isRead) {
-        this.M_ID = M_ID;
+
+
+    public Message(Long m_ID, String m_PostMessages, int m_status, String m_Time, int m_MessagesTypeID, long m_ToUserID, long m_FromUserID) {
+        this.m_ID = m_ID;
+        M_PostMessages = m_PostMessages;
+        M_status = m_status;
+        M_Time = m_Time;
+        M_MessagesTypeID = m_MessagesTypeID;
+        M_ToUserID = m_ToUserID;
+        M_FromUserID = m_FromUserID;
+    }
+
+
+    public Message(ListMessage.Message message) {
+        m_ID = message.getM_ID();
+        M_PostMessages = message.getM_PostMessages();
+        M_status = message.getM_status();
+        M_Time = message.getM_Time();
+        M_MessagesTypeID = message.getM_MessagesTypeID();
+        M_ToUserID = message.getM_ToUserID();
+        M_FromUserID = message.getM_FromUserID();
+    }
+
+
+    @Generated(hash = 265413287)
+    public Message(Long m_ID, String M_PostMessages, int M_status, String M_Time, int M_MessagesTypeID, long M_ToUserID, long M_FromUserID,
+            long flag, boolean isNew, boolean isRead) {
+        this.m_ID = m_ID;
         this.M_PostMessages = M_PostMessages;
         this.M_status = M_status;
         this.M_Time = M_Time;
@@ -72,28 +95,9 @@ public class Message {
         this.isRead = isRead;
     }
 
-    public Message(Long m_ID, String m_PostMessages, int m_status, String m_Time, int m_MessagesTypeID, long m_ToUserID, long m_FromUserID) {
-        M_ID = m_ID;
-        M_PostMessages = m_PostMessages;
-        M_status = m_status;
-        M_Time = m_Time;
-        M_MessagesTypeID = m_MessagesTypeID;
-        M_ToUserID = m_ToUserID;
-        M_FromUserID = m_FromUserID;
-    }
 
     @Generated(hash = 637306882)
     public Message() {
-    }
-
-    public Message(ListMessage.Message message) {
-        M_ID = message.getM_ID();
-        M_PostMessages = message.getM_PostMessages();
-        M_status = message.getM_status();
-        M_Time = message.getM_Time();
-        M_MessagesTypeID = message.getM_MessagesTypeID();
-        M_ToUserID = message.getM_ToUserID();
-        M_FromUserID = message.getM_FromUserID();
     }
 
     public boolean isRead() {
@@ -114,11 +118,11 @@ public class Message {
     }
 
     public Long getM_ID() {
-        return this.M_ID;
+        return this.m_ID;
     }
 
     public void setM_ID(Long M_ID) {
-        this.M_ID = M_ID;
+        this.m_ID = M_ID;
     }
 
     public String getM_PostMessages() {
@@ -173,7 +177,7 @@ public class Message {
     @Override
     public String toString() {
         return "Message{" +
-                "M_ID=" + M_ID +
+                "M_ID=" + m_ID +
                 ", M_PostMessages='" + M_PostMessages + '\'' +
                 ", M_status=" + M_status +
                 ", M_Time='" + M_Time + '\'' +

@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/iv_splash"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/splash_bg"
-        android:scaleType="centerCrop"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/timg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/x20"
+        android:text=" 乐 享 沟 通"
+        android:textColor="@color/Black_666666"
+        android:textSize="@dimen/x24" />
+
+
 </RelativeLayout>
+

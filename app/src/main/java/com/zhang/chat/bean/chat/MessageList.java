@@ -152,7 +152,7 @@ public class MessageList {
         this.M_MessagesTypeID = message.getM_MessagesTypeID();
         this.newNumber = newNumber;
 
-        this.keyFlag = String.valueOf(M_FromUserID + "" + M_ToUserID);
+        this.keyFlag = this.getKey();
     }
 
     @Generated(hash = 172152387)
