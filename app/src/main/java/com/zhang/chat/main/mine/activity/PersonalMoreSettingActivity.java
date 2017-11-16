@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+
 import com.zhang.chat.base.BaseActivity;
 import com.zhang.chat.bean.User;
 import com.zhang.chat.R;
@@ -65,6 +66,7 @@ public class PersonalMoreSettingActivity extends BaseActivity<MinePresenter, Min
                 showDialog1();
                 break;
             case R.id.rl_address:
+                SelectAddressActivity.startAction(this);
                 break;
             case R.id.rl_desc:
                 PersonChangeActivity.startAction(this, MinePresenter.UPDATE_DESC);
@@ -77,7 +79,7 @@ public class PersonalMoreSettingActivity extends BaseActivity<MinePresenter, Min
     private void showDialog1() {
         PersonalSexDialog dialog = new PersonalSexDialog();
         Bundle bundle = new Bundle();
-        bundle.putString("sex", user.getUser_sex()+"");
+        bundle.putString("sex", user.getUser_sex() + "");
         dialog.setArguments(bundle);
 
         dialog.setListener(radioId -> {
@@ -114,7 +116,11 @@ public class PersonalMoreSettingActivity extends BaseActivity<MinePresenter, Min
     @Override
     public void updateUserInfo(User user) {
         this.user = user;
-        tvAddress.setText("江苏 苏州");
+        if (user == null) {
+            return;
+        }
+
+        tvAddress.setText(String.valueOf((StrUtil.isBlank(user.getU_Province()) ? "" : user.getU_Province()) + " " + (StrUtil.isBlank(user.getU_City()) ? "" : user.getU_City())));
         if (user.getUser_sex() != -1)
             tvSex.setText((user.getUser_sex() == 1) ? "男" : "女");
         if (StrUtil.isNotBlank(user.getUser_desc()))
@@ -137,7 +143,7 @@ public class PersonalMoreSettingActivity extends BaseActivity<MinePresenter, Min
 
     @Override
     protected void onStart() {
-        if(mPresenter != null){
+        if (mPresenter != null) {
             mPresenter.onStart();
         }
         super.onStart();

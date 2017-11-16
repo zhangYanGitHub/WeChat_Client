@@ -7,3 +7,12 @@
 74	123	0	../../../../build/intermediates/cmake/release/obj/mips/libnative-lib.so	bf2791767b4c7a39
 1	103	0	CMakeFiles/native-lib.dir/src/main/jni/native-lib.c.o	db336b2b6f1bbe52
 103	262	0	../../../../build/intermediates/cmake/release/obj/mips/libnative-lib.so	bf2791767b4c7a39
+1	61	0	CMakeFiles/native-lib.dir/src/main/jni/native-lib.c.o	db336b2b6f1bbe52
+61	170	0	../../../../build/intermediates/cmake/release/obj/mips/libnative-lib.so	bf2791767b4c7a39
+1	960	0	CMakeFiles/native-lib.dir/src/main/jni/native-lib.c.o	db336b2b6f1bbe52
+961	1485	0	../../../../build/intermediates/cmake/release/obj/mips/libnative-lib.so	bf2791767b4c7a39
+1	68	0	CMakeFiles/native-lib.dir/src/main/jni/native-lib.c.o	db336b2b6f1bbe52
+68	126	0	../../../../build/intermediates/cmake/release/obj/mips/libnative-lib.so	bf2791767b4c7a39
+1	79	0	../../../../build/intermediates/cmake/release/obj/mips/libnative-lib.so	bf2791767b4c7a39
+20	189	0	CMakeFiles/native-lib.dir/src/main/jni/native-lib.c.o	db336b2b6f1bbe52
+189	434	0	../../../../build/intermediates/cmake/release/obj/mips/libnative-lib.so	bf2791767b4c7a39

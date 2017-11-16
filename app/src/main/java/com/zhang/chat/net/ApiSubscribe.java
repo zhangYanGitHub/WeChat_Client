@@ -42,7 +42,7 @@ public abstract class ApiSubscribe<T> implements Observer<T> {
     public void onSubscribe(Disposable d) {
         mRxManager.add(key, d);
         BaseActivity baseActivity = AppManager.getAppManager().currentActivity();
-        if (baseActivity.getClass().equals(((BaseActivity) context).getClass()) && isShowDialog) {
+        if ( isShowDialog && baseActivity.getClass().equals(((BaseActivity) context).getClass()) ) {
             baseActivity.showDialog();
         } else {
         }
@@ -58,7 +58,7 @@ public abstract class ApiSubscribe<T> implements Observer<T> {
         if (!((Activity) context).isFinishing())
             onSuccess(whichRequest, value);
         BaseActivity baseActivity = AppManager.getAppManager().currentActivity();
-        if (baseActivity.getClass().equals(((BaseActivity) context).getClass())) {
+        if (isShowDialog && baseActivity.getClass().equals(((BaseActivity) context).getClass())) {
             baseActivity.dismissDialog();
         } else {
         }
@@ -72,7 +72,7 @@ public abstract class ApiSubscribe<T> implements Observer<T> {
             onError(whichRequest, new RuntimeException(App.getApplication().getString(R.string.no_net)));
         }
         BaseActivity baseActivity = AppManager.getAppManager().currentActivity();
-        if (baseActivity.getClass().equals(((BaseActivity) context).getClass())) {
+        if (isShowDialog && baseActivity.getClass().equals(((BaseActivity) context).getClass())) {
             baseActivity.dismissDialog();
         } else {
         }
@@ -83,7 +83,7 @@ public abstract class ApiSubscribe<T> implements Observer<T> {
     @Override
     public void onComplete() {
         BaseActivity baseActivity = AppManager.getAppManager().currentActivity();
-        if (baseActivity.getClass().equals(((BaseActivity) context).getClass())) {
+        if (isShowDialog && baseActivity.getClass().equals(((BaseActivity) context).getClass())) {
             baseActivity.dismissDialog();
         } else {
         }

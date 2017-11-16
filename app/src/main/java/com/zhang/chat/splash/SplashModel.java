@@ -18,7 +18,9 @@ import com.zhang.chat.bean.chat.Verification;
 import com.zhang.chat.net.ApiFunction;
 import com.zhang.chat.net.RetrofitProvider;
 import com.zhang.chat.net.RxSchedulers;
+import com.zhang.chat.utils.Constant;
 import com.zhang.chat.utils.ListUtil;
+import com.zhang.chat.utils.ShareUtil;
 
 import org.greenrobot.greendao.query.QueryBuilder;
 
@@ -81,6 +83,17 @@ public class SplashModel extends SplashContract.SplashModel {
 
         if (ListUtil.isNotEmpty(verifications)) {
             for (Verification verification : verifications) {
+                final QueryBuilder<Verification> builder = verificationDao.queryBuilder();
+                final List<Verification> list = builder.whereOr(builder.and(VerificationDao.Properties.Friend_user_id.eq(verification.getUser_friend_id())
+                        , VerificationDao.Properties.User_friend_id.eq(verification.getFriend_user_id()))
+                        , builder.and(VerificationDao.Properties.Friend_user_id.eq(verification.getFriend_user_id())
+                                , VerificationDao.Properties.User_friend_id.eq(verification.getUser_friend_id())
+                        )).list();
+                if (ListUtil.isNotEmpty(list)) {
+                    final Verification verification1 = list.get(0);
+                    verification.setM_id(verification1.getM_id());
+                    verification.setIsRead(verification1.getIsRead());
+                }
                 verificationDao.insertOrReplace(verification);
             }
         }
@@ -90,6 +103,7 @@ public class SplashModel extends SplashContract.SplashModel {
             for (MainData.MessageList messageList : latestMessage) {
                 messageListDao.deleteAll();
                 MessageList messageList1 = new MessageList(messageList.getMessage(), messageList.getNumber());
+
                 messageListDao.insertOrReplace(messageList1);
             }
         }

@@ -57,7 +57,7 @@ public class Friend implements Comparable<Friend>, Serializable {
     }
 
     public Friend(User user) {
-        this.user_id = user.getM_Id();
+        this.user_id = user.getM_id();
         this.user_name = user.getUser_name();
         this.user_sex = user.getUser_sex();
         this.user_desc = user.getUser_desc();

@@ -18,6 +18,7 @@ import com.zhang.chat.utils.ShareUtil;
 
 public class App extends Application {
     private static App application;
+    public static final String TAG = App.class.getName();
 
     @Override
     public void onCreate() {

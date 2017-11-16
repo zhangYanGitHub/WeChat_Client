@@ -75,6 +75,7 @@ public class LoginPresenter extends LoginContract.Presenter {
                 if (mainData != null) {
                     ShareUtil.setPreferStr(Constant.USER_NAME, String.valueOf(mainData.getUser().getM_Id()));
                     mainData.getUser().setU_UserState(1);
+                    AppLog.e(TAG + "  jump()  user.setU_UserState(1);");
                     GreenDaoManager.getInstance().initUserData();
                     mModel.save(mainData);
                 }

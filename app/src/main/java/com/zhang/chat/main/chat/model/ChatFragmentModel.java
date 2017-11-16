@@ -25,6 +25,8 @@ import com.zhang.chat.net.RxSchedulers;
 import com.zhang.chat.utils.Constant;
 import com.zhang.chat.utils.ListUtil;
 import com.zhang.chat.utils.ShareUtil;
+import com.zhang.chat.utils.StrUtil;
+
 import io.reactivex.Observable;
 
 /**
@@ -53,6 +55,20 @@ public class ChatFragmentModel extends ChatFragmentContract.Model {
     @Override
     public List<MessageList> getLatestMessage() {
         List<MessageList> list = listDao.queryBuilder().list();
+        for (MessageList messageList : list) {
+            final String friend_img_face = messageList.getFriend_img_face();
+            final String friend_name = messageList.getFriend_Name();
+
+            if (StrUtil.isBlank(friend_img_face) || StrUtil.isBlank(friend_name)) {
+                final Long friendID = messageList.getFriendID();
+                final List<Friend> list1 = friendDao.queryBuilder().where(FriendDao.Properties.User_id.eq(friendID)).list();
+                if (ListUtil.isNotEmpty(list1)) {
+                    final Friend friend = list1.get(0);
+                    messageList.setFriend_img_face(friend.getUser_img_face_path());
+                    messageList.setFriend_Name(friend.getF_friend_type_id());
+                }
+            }
+        }
         return list;
     }
 
@@ -72,7 +88,6 @@ public class ChatFragmentModel extends ChatFragmentContract.Model {
                 .compose(RxSchedulers.<ListMessage>io_main());
 
     }
-
 
 
     @Override

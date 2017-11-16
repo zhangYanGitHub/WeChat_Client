@@ -11,7 +11,7 @@ import java.io.Serializable;
  */
 
 @Entity
-public class User  implements Serializable{
+public class User implements Serializable {
     static final long serialVersionUID = 536871008;
 
     @Id(autoincrement = true)
@@ -41,11 +41,12 @@ public class User  implements Serializable{
     /**
      * （省份ID）    外键
      */
-    private String U_Province;
+    private String u_Province;
     /**
      * （城市ID）    外键
      */
-    private String U_City;
+    private String u_City;
+    private String address_message;
     /**
      * 好友策略ID    外键
      */
@@ -54,6 +55,7 @@ public class User  implements Serializable{
      * (用户状态ID)    外键
      */
     private int U_UserState;
+
     public User(String name, String phone) {
         user_phone = phone;
         user_name = name;
@@ -62,14 +64,20 @@ public class User  implements Serializable{
 
 
 
+    @Generated(hash = 586692638)
+    public User() {
+    }
 
-    @Generated(hash = 360839852)
+
+
+
+    @Generated(hash = 1945182954)
     public User(long m_id, long uu_id, String user_name, int user_sex,
             String user_real_name, String user_password, String user_desc,
             String user_phone, String user_account, String user_email,
             String user_img_face_path, long user_register_date, String u_NationID,
-            String U_Province, String U_City, int U_FriendshipPolicy,
-            int U_UserState) {
+            String u_Province, String u_City, String address_message,
+            int U_FriendshipPolicy, int U_UserState) {
         this.m_id = m_id;
         this.uu_id = uu_id;
         this.user_name = user_name;
@@ -83,22 +91,12 @@ public class User  implements Serializable{
         this.user_img_face_path = user_img_face_path;
         this.user_register_date = user_register_date;
         this.u_NationID = u_NationID;
-        this.U_Province = U_Province;
-        this.U_City = U_City;
+        this.u_Province = u_Province;
+        this.u_City = u_City;
+        this.address_message = address_message;
         this.U_FriendshipPolicy = U_FriendshipPolicy;
         this.U_UserState = U_UserState;
     }
-
-
-
-
-
-    @Generated(hash = 586692638)
-    public User() {
-    }
-
-
-
 
 
     public long getM_Id() {
@@ -142,19 +140,19 @@ public class User  implements Serializable{
     }
 
     public String getU_Province() {
-        return U_Province;
+        return u_Province;
     }
 
     public void setU_Province(String u_Province) {
-        U_Province = u_Province;
+        this.u_Province = u_Province;
     }
 
     public String getU_City() {
-        return U_City;
+        return u_City;
     }
 
     public void setU_City(String u_City) {
-        U_City = u_City;
+        this.u_City = u_City;
     }
 
     public int getU_FriendshipPolicy() {
@@ -253,15 +251,9 @@ public class User  implements Serializable{
     }
 
 
-
-
-
     public long getM_id() {
         return this.m_id;
     }
-
-
-
 
 
     public void setM_id(long m_id) {
@@ -269,7 +261,36 @@ public class User  implements Serializable{
     }
 
 
+    public String getAddress_message() {
+        return address_message;
+    }
 
+    public void setAddress_message(String address_message) {
+        this.address_message = address_message;
+    }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "m_id=" + m_id +
+                ", uu_id=" + uu_id +
+                ", user_name='" + user_name + '\'' +
+                ", user_sex=" + user_sex +
+                ", user_real_name='" + user_real_name + '\'' +
+                ", user_password='" + user_password + '\'' +
+                ", user_desc='" + user_desc + '\'' +
+                ", user_phone='" + user_phone + '\'' +
+                ", user_account='" + user_account + '\'' +
+                ", user_email='" + user_email + '\'' +
+                ", user_img_face_path='" + user_img_face_path + '\'' +
+                ", user_register_date=" + user_register_date +
+                ", u_NationID='" + u_NationID + '\'' +
+                ", u_Province='" + u_Province + '\'' +
+                ", u_City='" + u_City + '\'' +
+                ", address_message='" + address_message + '\'' +
+                ", U_FriendshipPolicy=" + U_FriendshipPolicy +
+                ", U_UserState=" + U_UserState +
+                '}';
+    }
 }
 

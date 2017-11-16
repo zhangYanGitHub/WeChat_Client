@@ -1,15 +1,18 @@
 apply plugin: 'com.android.library'
 
 android {
+
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
-
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
-
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86","arm64-v8a","x86_64"
+        }
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
@@ -23,8 +26,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-
     externalNativeBuild {
         cmake {
             path 'CMakeLists.txt'
@@ -60,4 +61,5 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
     compile files('libs/netty-all-4.1.16.Final.jar')
     compile files('libs/netty-all-4.1.16.Final-sources.jar')
+    compile 'com.amap.api:location:latest.integration'
 }

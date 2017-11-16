@@ -21,15 +21,25 @@ android {
             enabled true
         }
     }
+    signingConfigs {
+        config {
+            keyAlias 'wx_person'
+            keyPassword 'zhangyan'
+            storeFile file('../key/wx_zhangyan.jks')
+            storePassword 'zhangyan'
+        }
+    }
     buildTypes {
+
         release {
-            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "boolean", "LOG_DEBUG", "true"
             //混淆
-            minifyEnabled true
+            minifyEnabled false
             //Zipalign优化
             zipAlignEnabled true
+            debuggable true
             // 移除无用的resource文件
-            shrinkResources true
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             //apk命名
             android.applicationVariants.all { variant ->
@@ -42,14 +52,18 @@ android {
                     }
                 }
             }
+            signingConfig signingConfigs.config
         }
         debug {
             buildConfigField "boolean", "LOG_DEBUG", "true"
             minifyEnabled false
             zipAlignEnabled false
             shrinkResources false
+            signingConfig signingConfigs.config
         }
+
     }
+
     greendao {
         schemaVersion 1
         daoPackage 'com.greendao.gen'

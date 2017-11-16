@@ -40,6 +40,7 @@ public class SystemModel extends SystemContract.Model {
         }
         User user = list.get(0);
         user.setU_UserState(0);
+        AppLog.e(TAG+"  clearPersonData()  user.setU_UserState(0);");
         userDao.update(user);
         ShareUtil.setPreferStr(Constant.COOKIES_TOKEN, "");
         ShareUtil.setPreferStr(Constant.USER_NAME, "");

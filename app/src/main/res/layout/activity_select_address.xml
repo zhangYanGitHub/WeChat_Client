@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Gray_F5F5F5"
+    android:orientation="vertical"
+    tools:context="com.zhang.chat.main.mine.activity.SelectAddressActivity">
+
+    <com.zhang.chat.view.CustomSubTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        title:background_title_bar="@color/White_FFFFFF"
+        title:right_1_visible="false"
+        title:right_2_visible="false"
+        title:title_text="选择地区" />
+
+    <include layout="@layout/view_decoration_40" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/x30"
+        android:paddingRight="@dimen/x30"
+        android:text="当前位置"
+        android:textColor="@color/Gray_999999"
+        android:textSize="@dimen/x24" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/x10"
+        android:paddingLeft="@dimen/x30"
+        android:paddingRight="@dimen/x30"
+        android:paddingTop="@dimen/x10">
+
+        <ImageView
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/y70"
+            android:padding="@dimen/x10"
+            android:scaleType="fitXY"
+            android:src="@drawable/address" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text=""
+            android:textColor="@color/Black_333333"
+            android:textSize="@dimen/x26" />
+    </LinearLayout>
+
+
+    <include layout="@layout/view_decoration_40" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/x30"
+        android:paddingRight="@dimen/x30"
+        android:text="全部地区"
+        android:textColor="@color/Gray_999999"
+        android:textSize="@dimen/x24" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_mine"
+        android:paddingBottom="@dimen/x30"
+        android:paddingLeft="@dimen/x30"
+        android:paddingRight="@dimen/x30"
+        android:paddingTop="@dimen/x30">
+
+        <TextView
+            android:id="@+id/tv_all_address_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="中国"
+            android:textColor="@color/Black_333333"
+            android:textSize="@dimen/x26" />
+
+        <TextView
+            android:id="@+id/tv_all_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:text="已选地区"
+            android:textColor="@color/Gray_999999"
+            android:textSize="@dimen/x24" />
+    </RelativeLayout>
+
+    <include layout="@layout/view_decoration_40" />
+
+</LinearLayout>

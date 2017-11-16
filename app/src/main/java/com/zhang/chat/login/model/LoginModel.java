@@ -11,11 +11,14 @@ import com.zhang.chat.bean.MainData;
 import com.zhang.chat.bean.User;
 import com.zhang.chat.bean.chat.MessageList;
 import com.zhang.chat.bean.chat.Verification;
+import com.zhang.chat.corelib.utils.AppLog;
 import com.zhang.chat.login.contract.LoginContract;
 import com.zhang.chat.net.ApiFunction;
 import com.zhang.chat.net.RetrofitProvider;
 import com.zhang.chat.net.RxSchedulers;
 import com.zhang.chat.utils.ListUtil;
+
+import org.greenrobot.greendao.query.QueryBuilder;
 
 import java.util.List;
 
@@ -81,10 +84,30 @@ public class LoginModel extends LoginContract.Model {
                 friendDao.insertOrReplace(friend);
             }
         }
-        userDao.insertOrReplace(user);
+        final List<User> list1 = userDao.queryBuilder().where(UserDao.Properties.U_UserState.eq(1)).list();
+        if (ListUtil.isNotEmpty(list1)) {
+            AppLog.e("list size = " + list1.size());
+            for (User user1 : list1) {
+                AppLog.e(user1.toString());
+            }
+            throw new RuntimeException("list1 != NULL");
 
+        } else {
+            userDao.insertOrReplace(user);
+        }
         if (ListUtil.isNotEmpty(verifications)) {
             for (Verification verification : verifications) {
+                final QueryBuilder<Verification> builder = verificationDao.queryBuilder();
+                final List<Verification> list = builder.whereOr(builder.and(VerificationDao.Properties.Friend_user_id.eq(verification.getUser_friend_id())
+                        , VerificationDao.Properties.User_friend_id.eq(verification.getFriend_user_id()))
+                        , builder.and(VerificationDao.Properties.Friend_user_id.eq(verification.getFriend_user_id())
+                                , VerificationDao.Properties.User_friend_id.eq(verification.getUser_friend_id())
+                        )).list();
+                if (ListUtil.isNotEmpty(list)) {
+                    final Verification verification1 = list.get(0);
+                    verification.setM_id(verification1.getM_id());
+                    verification.setIsRead(verification1.getIsRead());
+                }
                 verificationDao.insertOrReplace(verification);
             }
         }

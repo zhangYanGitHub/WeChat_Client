@@ -40,6 +40,7 @@ import com.zhang.chat.utils.ShareUtil;
 public class NettyService extends Service implements NettyListener {
 
     private NetworkReceiver receiver;
+    public static final String TAG = NettyService.class.getName();
 
     private void shutdown() {
     }
@@ -150,6 +151,7 @@ public class NettyService extends Service implements NettyListener {
         User user = list.get(0);
         GreenDaoManager.getInstance().closeConnection();
         user.setU_UserState(0);
+        AppLog.e(TAG + "  checkToken()  user.setU_UserState(0);");
         userDao.update(user);
         LoginActivity.startAction(AppManager.getAppManager().currentActivity());
         AppManager.getAppManager().removeAllActivity();

@@ -57,6 +57,8 @@ public class ApiFunction<T> implements Function<BaseResponse<T>, Observable<T>> 
                     User user = list.get(0);
                     GreenDaoManager.getInstance().closeConnection();
                     user.setU_UserState(0);
+
+                    AppLog.e("ApiFunction  clearPersonData()  user.setU_UserState(0);");
                     userDao.update(user);
                     LoginActivity.startAction(AppManager.getAppManager().currentActivity());
                     AppManager.getAppManager().removeAllActivity();

@@ -58,6 +58,24 @@ public class MainData {
     public static class MessageList {
         private Message message;
         private int number;
+        private String img_face_path;
+        private long friend_id;
+
+        public String getImg_face_path() {
+            return img_face_path;
+        }
+
+        public void setImg_face_path(String img_face_path) {
+            this.img_face_path = img_face_path;
+        }
+
+        public long getFriend_id() {
+            return friend_id;
+        }
+
+        public void setFriend_id(long friend_id) {
+            this.friend_id = friend_id;
+        }
 
         public Message getMessage() {
             return message;

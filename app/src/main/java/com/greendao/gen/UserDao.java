@@ -37,10 +37,11 @@ public class UserDao extends AbstractDao<User, Long> {
         public final static Property User_img_face_path = new Property(10, String.class, "user_img_face_path", false, "USER_IMG_FACE_PATH");
         public final static Property User_register_date = new Property(11, long.class, "user_register_date", false, "USER_REGISTER_DATE");
         public final static Property U_NationID = new Property(12, String.class, "u_NationID", false, "U__NATION_ID");
-        public final static Property U_Province = new Property(13, String.class, "U_Province", false, "U__PROVINCE");
-        public final static Property U_City = new Property(14, String.class, "U_City", false, "U__CITY");
-        public final static Property U_FriendshipPolicy = new Property(15, int.class, "U_FriendshipPolicy", false, "U__FRIENDSHIP_POLICY");
-        public final static Property U_UserState = new Property(16, int.class, "U_UserState", false, "U__USER_STATE");
+        public final static Property U_Province = new Property(13, String.class, "u_Province", false, "U__PROVINCE");
+        public final static Property U_City = new Property(14, String.class, "u_City", false, "U__CITY");
+        public final static Property Address_message = new Property(15, String.class, "address_message", false, "ADDRESS_MESSAGE");
+        public final static Property U_FriendshipPolicy = new Property(16, int.class, "U_FriendshipPolicy", false, "U__FRIENDSHIP_POLICY");
+        public final static Property U_UserState = new Property(17, int.class, "U_UserState", false, "U__USER_STATE");
     }
 
 
@@ -69,10 +70,11 @@ public class UserDao extends AbstractDao<User, Long> {
                 "\"USER_IMG_FACE_PATH\" TEXT," + // 10: user_img_face_path
                 "\"USER_REGISTER_DATE\" INTEGER NOT NULL ," + // 11: user_register_date
                 "\"U__NATION_ID\" TEXT," + // 12: u_NationID
-                "\"U__PROVINCE\" TEXT," + // 13: U_Province
-                "\"U__CITY\" TEXT," + // 14: U_City
-                "\"U__FRIENDSHIP_POLICY\" INTEGER NOT NULL ," + // 15: U_FriendshipPolicy
-                "\"U__USER_STATE\" INTEGER NOT NULL );"); // 16: U_UserState
+                "\"U__PROVINCE\" TEXT," + // 13: u_Province
+                "\"U__CITY\" TEXT," + // 14: u_City
+                "\"ADDRESS_MESSAGE\" TEXT," + // 15: address_message
+                "\"U__FRIENDSHIP_POLICY\" INTEGER NOT NULL ," + // 16: U_FriendshipPolicy
+                "\"U__USER_STATE\" INTEGER NOT NULL );"); // 17: U_UserState
     }
 
     /** Drops the underlying database table. */
@@ -134,17 +136,22 @@ public class UserDao extends AbstractDao<User, Long> {
             stmt.bindString(13, u_NationID);
         }
  
-        String U_Province = entity.getU_Province();
-        if (U_Province != null) {
-            stmt.bindString(14, U_Province);
+        String u_Province = entity.getU_Province();
+        if (u_Province != null) {
+            stmt.bindString(14, u_Province);
         }
  
-        String U_City = entity.getU_City();
-        if (U_City != null) {
-            stmt.bindString(15, U_City);
+        String u_City = entity.getU_City();
+        if (u_City != null) {
+            stmt.bindString(15, u_City);
         }
-        stmt.bindLong(16, entity.getU_FriendshipPolicy());
-        stmt.bindLong(17, entity.getU_UserState());
+ 
+        String address_message = entity.getAddress_message();
+        if (address_message != null) {
+            stmt.bindString(16, address_message);
+        }
+        stmt.bindLong(17, entity.getU_FriendshipPolicy());
+        stmt.bindLong(18, entity.getU_UserState());
     }
 
     @Override
@@ -200,17 +207,22 @@ public class UserDao extends AbstractDao<User, Long> {
             stmt.bindString(13, u_NationID);
         }
  
-        String U_Province = entity.getU_Province();
-        if (U_Province != null) {
-            stmt.bindString(14, U_Province);
+        String u_Province = entity.getU_Province();
+        if (u_Province != null) {
+            stmt.bindString(14, u_Province);
         }
  
-        String U_City = entity.getU_City();
-        if (U_City != null) {
-            stmt.bindString(15, U_City);
+        String u_City = entity.getU_City();
+        if (u_City != null) {
+            stmt.bindString(15, u_City);
         }
-        stmt.bindLong(16, entity.getU_FriendshipPolicy());
-        stmt.bindLong(17, entity.getU_UserState());
+ 
+        String address_message = entity.getAddress_message();
+        if (address_message != null) {
+            stmt.bindString(16, address_message);
+        }
+        stmt.bindLong(17, entity.getU_FriendshipPolicy());
+        stmt.bindLong(18, entity.getU_UserState());
     }
 
     @Override
@@ -234,10 +246,11 @@ public class UserDao extends AbstractDao<User, Long> {
             cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10), // user_img_face_path
             cursor.getLong(offset + 11), // user_register_date
             cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12), // u_NationID
-            cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13), // U_Province
-            cursor.isNull(offset + 14) ? null : cursor.getString(offset + 14), // U_City
-            cursor.getInt(offset + 15), // U_FriendshipPolicy
-            cursor.getInt(offset + 16) // U_UserState
+            cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13), // u_Province
+            cursor.isNull(offset + 14) ? null : cursor.getString(offset + 14), // u_City
+            cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15), // address_message
+            cursor.getInt(offset + 16), // U_FriendshipPolicy
+            cursor.getInt(offset + 17) // U_UserState
         );
         return entity;
     }
@@ -259,8 +272,9 @@ public class UserDao extends AbstractDao<User, Long> {
         entity.setU_NationID(cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12));
         entity.setU_Province(cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13));
         entity.setU_City(cursor.isNull(offset + 14) ? null : cursor.getString(offset + 14));
-        entity.setU_FriendshipPolicy(cursor.getInt(offset + 15));
-        entity.setU_UserState(cursor.getInt(offset + 16));
+        entity.setAddress_message(cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15));
+        entity.setU_FriendshipPolicy(cursor.getInt(offset + 16));
+        entity.setU_UserState(cursor.getInt(offset + 17));
      }
     
     @Override
