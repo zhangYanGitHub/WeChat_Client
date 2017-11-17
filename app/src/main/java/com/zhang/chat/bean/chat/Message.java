@@ -22,18 +22,18 @@ public class Message {
     /**
      * 消息内容
      */
-    private String M_PostMessages;
+    private String m_PostMessages;
     /**
      * 1  发送中
      * 2  发送成功
      * 3  发送失败
      * 4  未读
      */
-    private int M_status;
+    private int m_status;
     /**
      * (发送时间)    默认值
      */
-    private String M_Time;
+    private String m_Time;
     /**
      * (消息类型ID)    外键
      * 1 文本信息
@@ -41,15 +41,15 @@ public class Message {
      * 3 视频信息
      * 4 文件
      */
-    private int M_MessagesTypeID;
+    private int m_MessagesTypeID;
     /**
      * (发送者ID)指向用户表    外键
      */
-    private long M_ToUserID;
+    private long m_ToUserID;
     /**
      * (接收者ID)指向用户表    外键
      */
-    private long M_FromUserID;
+    private long m_FromUserID;
     private long flag = 1;
 
     private boolean isNew;
@@ -60,36 +60,36 @@ public class Message {
 
     public Message(Long m_ID, String m_PostMessages, int m_status, String m_Time, int m_MessagesTypeID, long m_ToUserID, long m_FromUserID) {
         this.m_ID = m_ID;
-        M_PostMessages = m_PostMessages;
-        M_status = m_status;
-        M_Time = m_Time;
-        M_MessagesTypeID = m_MessagesTypeID;
-        M_ToUserID = m_ToUserID;
-        M_FromUserID = m_FromUserID;
+        this.m_PostMessages = m_PostMessages;
+        this.m_status = m_status;
+        this.m_Time = m_Time;
+        this.m_MessagesTypeID = m_MessagesTypeID;
+        this.m_ToUserID = m_ToUserID;
+        this.m_FromUserID = m_FromUserID;
     }
 
 
     public Message(ListMessage.Message message) {
         m_ID = message.getM_ID();
-        M_PostMessages = message.getM_PostMessages();
-        M_status = message.getM_status();
-        M_Time = message.getM_Time();
-        M_MessagesTypeID = message.getM_MessagesTypeID();
-        M_ToUserID = message.getM_ToUserID();
-        M_FromUserID = message.getM_FromUserID();
+        m_PostMessages = message.getM_PostMessages();
+        m_status = message.getM_status();
+        m_Time = message.getM_Time();
+        m_MessagesTypeID = message.getM_MessagesTypeID();
+        m_ToUserID = message.getM_ToUserID();
+        m_FromUserID = message.getM_FromUserID();
     }
 
 
-    @Generated(hash = 265413287)
-    public Message(Long m_ID, String M_PostMessages, int M_status, String M_Time, int M_MessagesTypeID, long M_ToUserID, long M_FromUserID,
+    @Generated(hash = 486226015)
+    public Message(Long m_ID, String m_PostMessages, int m_status, String m_Time, int m_MessagesTypeID, long m_ToUserID, long m_FromUserID,
             long flag, boolean isNew, boolean isRead) {
         this.m_ID = m_ID;
-        this.M_PostMessages = M_PostMessages;
-        this.M_status = M_status;
-        this.M_Time = M_Time;
-        this.M_MessagesTypeID = M_MessagesTypeID;
-        this.M_ToUserID = M_ToUserID;
-        this.M_FromUserID = M_FromUserID;
+        this.m_PostMessages = m_PostMessages;
+        this.m_status = m_status;
+        this.m_Time = m_Time;
+        this.m_MessagesTypeID = m_MessagesTypeID;
+        this.m_ToUserID = m_ToUserID;
+        this.m_FromUserID = m_FromUserID;
         this.flag = flag;
         this.isNew = isNew;
         this.isRead = isRead;
@@ -99,6 +99,8 @@ public class Message {
     @Generated(hash = 637306882)
     public Message() {
     }
+
+
 
     public boolean isRead() {
         return isRead;
@@ -121,69 +123,69 @@ public class Message {
         return this.m_ID;
     }
 
-    public void setM_ID(Long M_ID) {
-        this.m_ID = M_ID;
+    public void setM_ID(Long m_ID) {
+        this.m_ID = m_ID;
     }
 
     public String getM_PostMessages() {
-        return this.M_PostMessages;
+        return this.m_PostMessages;
     }
 
-    public void setM_PostMessages(String M_PostMessages) {
-        this.M_PostMessages = M_PostMessages;
+    public void setM_PostMessages(String m_PostMessages) {
+        this.m_PostMessages = m_PostMessages;
     }
 
     public int getM_status() {
-        return this.M_status;
+        return this.m_status;
     }
 
-    public void setM_status(int M_status) {
-        this.M_status = M_status;
+    public void setM_status(int m_status) {
+        this.m_status = m_status;
     }
 
     public String getM_Time() {
-        return this.M_Time;
+        return this.m_Time;
     }
 
-    public void setM_Time(String M_Time) {
-        this.M_Time = M_Time;
+    public void setM_Time(String m_Time) {
+        this.m_Time = m_Time;
     }
 
     public int getM_MessagesTypeID() {
-        return this.M_MessagesTypeID;
+        return this.m_MessagesTypeID;
     }
 
-    public void setM_MessagesTypeID(int M_MessagesTypeID) {
-        this.M_MessagesTypeID = M_MessagesTypeID;
+    public void setM_MessagesTypeID(int m_MessagesTypeID) {
+        this.m_MessagesTypeID = m_MessagesTypeID;
     }
 
     public long getM_ToUserID() {
-        return this.M_ToUserID;
+        return this.m_ToUserID;
     }
 
-    public void setM_ToUserID(long M_ToUserID) {
-        this.M_ToUserID = M_ToUserID;
+    public void setM_ToUserID(long m_ToUserID) {
+        this.m_ToUserID = m_ToUserID;
     }
 
-    public long getM_FromUserID() {
-        return this.M_FromUserID;
+    public long getm_FromUserID() {
+        return this.m_FromUserID;
     }
 
-    public void setM_FromUserID(long M_FromUserID) {
-        this.M_FromUserID = M_FromUserID;
+    public void setM_FromUserID(long m_FromUserID) {
+        this.m_FromUserID = m_FromUserID;
     }
 
 
     @Override
     public String toString() {
         return "Message{" +
-                "M_ID=" + m_ID +
-                ", M_PostMessages='" + M_PostMessages + '\'' +
-                ", M_status=" + M_status +
-                ", M_Time='" + M_Time + '\'' +
-                ", M_MessagesTypeID=" + M_MessagesTypeID +
-                ", M_ToUserID=" + M_ToUserID +
-                ", M_FromUserID=" + M_FromUserID +
+                "m_ID=" + m_ID +
+                ", m_PostMessages='" + m_PostMessages + '\'' +
+                ", m_status=" + m_status +
+                ", m_Time='" + m_Time + '\'' +
+                ", m_MessagesTypeID=" + m_MessagesTypeID +
+                ", m_ToUserID=" + m_ToUserID +
+                ", m_FromUserID=" + m_FromUserID +
                 ", flag=" + flag +
                 ", isNew=" + isNew +
                 '}';
@@ -215,10 +217,15 @@ public class Message {
 
     public String getKey() {
 
-        if (M_ToUserID > M_FromUserID) {
-            return String.valueOf(getM_FromUserID() + "" + this.getM_ToUserID());
+        if (m_ToUserID > m_FromUserID) {
+            return String.valueOf(getm_FromUserID() + "" + this.getM_ToUserID());
         } else {
-            return String.valueOf(getM_ToUserID() + "" + this.getM_FromUserID());
+            return String.valueOf(getM_ToUserID() + "" + this.getm_FromUserID());
         }
+    }
+
+
+    public long getM_FromUserID() {
+        return this.m_FromUserID;
     }
 }

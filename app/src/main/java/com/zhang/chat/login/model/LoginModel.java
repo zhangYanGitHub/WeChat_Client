@@ -126,8 +126,11 @@ public class LoginModel extends LoginContract.Model {
         if (ListUtil.isNotEmpty(latestMessage)) {
 
             for (MainData.MessageList messageList : latestMessage) {
-
                 MessageList messageList1 = new MessageList(messageList.getMessage(), messageList.getNumber());
+                final List<MessageList> list = messageListDao.queryBuilder().where(MessageListDao.Properties.KeyFlag.eq(messageList1.getKey())).list();
+                if (ListUtil.isNotEmpty(list)) {
+                    messageList1.setM_ID(list.get(0).getM_ID());
+                }
                 messageListDao.insertOrReplace(messageList1);
             }
         }

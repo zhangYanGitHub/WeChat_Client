@@ -25,12 +25,12 @@ public class MessageDao extends AbstractDao<Message, Long> {
      */
     public static class Properties {
         public final static Property M_ID = new Property(0, Long.class, "m_ID", true, "_id");
-        public final static Property M_PostMessages = new Property(1, String.class, "M_PostMessages", false, "M__POST_MESSAGES");
-        public final static Property M_status = new Property(2, int.class, "M_status", false, "M_STATUS");
-        public final static Property M_Time = new Property(3, String.class, "M_Time", false, "M__TIME");
-        public final static Property M_MessagesTypeID = new Property(4, int.class, "M_MessagesTypeID", false, "M__MESSAGES_TYPE_ID");
-        public final static Property M_ToUserID = new Property(5, long.class, "M_ToUserID", false, "M__TO_USER_ID");
-        public final static Property M_FromUserID = new Property(6, long.class, "M_FromUserID", false, "M__FROM_USER_ID");
+        public final static Property M_PostMessages = new Property(1, String.class, "m_PostMessages", false, "M__POST_MESSAGES");
+        public final static Property M_status = new Property(2, int.class, "m_status", false, "M_STATUS");
+        public final static Property M_Time = new Property(3, String.class, "m_Time", false, "M__TIME");
+        public final static Property M_MessagesTypeID = new Property(4, int.class, "m_MessagesTypeID", false, "M__MESSAGES_TYPE_ID");
+        public final static Property M_ToUserID = new Property(5, long.class, "m_ToUserID", false, "M__TO_USER_ID");
+        public final static Property M_FromUserID = new Property(6, long.class, "m_FromUserID", false, "M__FROM_USER_ID");
         public final static Property Flag = new Property(7, long.class, "flag", false, "FLAG");
         public final static Property IsNew = new Property(8, boolean.class, "isNew", false, "IS_NEW");
         public final static Property IsRead = new Property(9, boolean.class, "isRead", false, "IS_READ");
@@ -50,12 +50,12 @@ public class MessageDao extends AbstractDao<Message, Long> {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"MESSAGE\" (" + //
                 "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: m_ID
-                "\"M__POST_MESSAGES\" TEXT," + // 1: M_PostMessages
-                "\"M_STATUS\" INTEGER NOT NULL ," + // 2: M_status
-                "\"M__TIME\" TEXT," + // 3: M_Time
-                "\"M__MESSAGES_TYPE_ID\" INTEGER NOT NULL ," + // 4: M_MessagesTypeID
-                "\"M__TO_USER_ID\" INTEGER NOT NULL ," + // 5: M_ToUserID
-                "\"M__FROM_USER_ID\" INTEGER NOT NULL ," + // 6: M_FromUserID
+                "\"M__POST_MESSAGES\" TEXT," + // 1: m_PostMessages
+                "\"M_STATUS\" INTEGER NOT NULL ," + // 2: m_status
+                "\"M__TIME\" TEXT," + // 3: m_Time
+                "\"M__MESSAGES_TYPE_ID\" INTEGER NOT NULL ," + // 4: m_MessagesTypeID
+                "\"M__TO_USER_ID\" INTEGER NOT NULL ," + // 5: m_ToUserID
+                "\"M__FROM_USER_ID\" INTEGER NOT NULL ," + // 6: m_FromUserID
                 "\"FLAG\" INTEGER NOT NULL ," + // 7: flag
                 "\"IS_NEW\" INTEGER NOT NULL ," + // 8: isNew
                 "\"IS_READ\" INTEGER NOT NULL );"); // 9: isRead
@@ -76,15 +76,15 @@ public class MessageDao extends AbstractDao<Message, Long> {
             stmt.bindLong(1, m_ID);
         }
  
-        String M_PostMessages = entity.getM_PostMessages();
-        if (M_PostMessages != null) {
-            stmt.bindString(2, M_PostMessages);
+        String m_PostMessages = entity.getM_PostMessages();
+        if (m_PostMessages != null) {
+            stmt.bindString(2, m_PostMessages);
         }
         stmt.bindLong(3, entity.getM_status());
  
-        String M_Time = entity.getM_Time();
-        if (M_Time != null) {
-            stmt.bindString(4, M_Time);
+        String m_Time = entity.getM_Time();
+        if (m_Time != null) {
+            stmt.bindString(4, m_Time);
         }
         stmt.bindLong(5, entity.getM_MessagesTypeID());
         stmt.bindLong(6, entity.getM_ToUserID());
@@ -103,15 +103,15 @@ public class MessageDao extends AbstractDao<Message, Long> {
             stmt.bindLong(1, m_ID);
         }
  
-        String M_PostMessages = entity.getM_PostMessages();
-        if (M_PostMessages != null) {
-            stmt.bindString(2, M_PostMessages);
+        String m_PostMessages = entity.getM_PostMessages();
+        if (m_PostMessages != null) {
+            stmt.bindString(2, m_PostMessages);
         }
         stmt.bindLong(3, entity.getM_status());
  
-        String M_Time = entity.getM_Time();
-        if (M_Time != null) {
-            stmt.bindString(4, M_Time);
+        String m_Time = entity.getM_Time();
+        if (m_Time != null) {
+            stmt.bindString(4, m_Time);
         }
         stmt.bindLong(5, entity.getM_MessagesTypeID());
         stmt.bindLong(6, entity.getM_ToUserID());
@@ -130,12 +130,12 @@ public class MessageDao extends AbstractDao<Message, Long> {
     public Message readEntity(Cursor cursor, int offset) {
         Message entity = new Message( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // m_ID
-            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // M_PostMessages
-            cursor.getInt(offset + 2), // M_status
-            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // M_Time
-            cursor.getInt(offset + 4), // M_MessagesTypeID
-            cursor.getLong(offset + 5), // M_ToUserID
-            cursor.getLong(offset + 6), // M_FromUserID
+            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // m_PostMessages
+            cursor.getInt(offset + 2), // m_status
+            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // m_Time
+            cursor.getInt(offset + 4), // m_MessagesTypeID
+            cursor.getLong(offset + 5), // m_ToUserID
+            cursor.getLong(offset + 6), // m_FromUserID
             cursor.getLong(offset + 7), // flag
             cursor.getShort(offset + 8) != 0, // isNew
             cursor.getShort(offset + 9) != 0 // isRead

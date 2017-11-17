@@ -1,5 +1,7 @@
 package com.zhang.chat.main.chat.model;
 
+import android.text.TextUtils;
+
 import com.greendao.gen.FriendDao;
 import com.greendao.gen.MessageDao;
 import com.greendao.gen.MessageListDao;
@@ -51,7 +53,9 @@ public class ChatFragmentModel extends ChatFragmentContract.Model {
         for (MessageList messageList : list) {
             final String friend_img_face = messageList.getFriend_img_face();
             final String friend_name = messageList.getFriend_Name();
-
+            if (TextUtils.equals(messageList.getKey(), "00")) {
+                listDao.delete(messageList);
+            }
             if (StrUtil.isBlank(friend_img_face) || StrUtil.isBlank(friend_name)) {
                 final Long friendID = messageList.getFriendID();
                 final List<Friend> list1 = friendDao.queryBuilder().where(FriendDao.Properties.User_id.eq(friendID)).list();
